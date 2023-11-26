@@ -6,8 +6,8 @@ class MyCustomClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     final path = Path();
 
-    double triangleWidth = getProportionateScreenWidth(375);
-    double triangleHeight = getProportionateScreenHeight(150);
+    double triangleWidth = getProportionateScreenWidth(360);
+    double triangleHeight = getProportionateScreenHeight(125);
     double trianglePosition = (size.width - triangleWidth) / 2;
 
     path.lineTo(0, size.height);
