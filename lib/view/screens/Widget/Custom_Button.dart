@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../Size_Config.dart';
-import '../../../StaticColors.dart';
+import '../../../Static/Size_Config.dart';
+import '../../../Static/StaticColors.dart';
 class CustomButton extends StatelessWidget {
   final Function() press;
   final String title;

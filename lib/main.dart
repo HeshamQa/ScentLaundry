@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:scentlaundry/Route.dart';
+import 'package:scentlaundry/Static/Route.dart';
 import 'package:scentlaundry/view/screens/LoginScreen/LoginScreen.dart';
 
 void main() {

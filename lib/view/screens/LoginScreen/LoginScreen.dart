@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:scentlaundry/Size_Config.dart';
+import 'package:scentlaundry/Static/Size_Config.dart';
 import 'package:scentlaundry/view/screens/Widget/Social_Button.dart';
 import 'package:scentlaundry/view/screens/Widget/TextForm.dart';
 import '../Widget/Custom_Button.dart';
-import 'Components/BackGround.dart';
+import '../Widget/BackGround.dart';
 import 'Components/SignUpButton.dart';
 
 class LoginScreen extends StatelessWidget {

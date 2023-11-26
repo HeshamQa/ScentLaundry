@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../../../Size_Config.dart';
+import '../../../Static/Size_Config.dart';
 
 class SocialButton extends StatelessWidget {
   final String image,title;

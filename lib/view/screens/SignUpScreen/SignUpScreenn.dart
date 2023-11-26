@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scentlaundry/view/screens/SignUpScreen/components/LogInButton.dart';
-import '../../../Size_Config.dart';
-import '../LoginScreen/Components/BackGround.dart';
+import '../../../Static/Size_Config.dart';
+import '../Widget/BackGround.dart';
 import '../Widget/Custom_Button.dart';
 import '../Widget/Social_Button.dart';
 import '../Widget/TextForm.dart';
@@ -46,11 +46,6 @@ class SignUpScreen extends StatelessWidget {
                         textEditingController: passwordTextEditingController,
                         obscure: true,
                         hint: "Reset Password"),
-                    InkWell(
-                      onTap: () {},
-                      child:
-                          const Text("Forgot?", style: TextStyle(fontSize: 18)),
-                    ),
                     CustomButton(
                       press: () {},
                       title: 'Log In',
