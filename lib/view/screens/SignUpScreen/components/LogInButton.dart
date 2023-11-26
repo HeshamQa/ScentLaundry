@@ -1,12 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:scentlaundry/Route.dart';
-
 import '../../../../StaticColors.dart';
 
-class SignUpButton extends StatelessWidget {
-  const SignUpButton({
+class LogInButton extends StatelessWidget {
+  const LogInButton({
     super.key,
   });
 
@@ -16,7 +13,7 @@ class SignUpButton extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
-          "Don't have an account? ",
+          "Do you have an account? ",
           style: TextStyle(
               fontSize: 15,
               color: Colors.grey,
@@ -24,10 +21,10 @@ class SignUpButton extends StatelessWidget {
         ),
         InkWell(
             onTap: () {
-              Get.toNamed(Approute.Signup);
+              Get.back();
             },
             child: Text(
-              "Create Now",
+              "Login",
               style: TextStyle(
                   color: StaticColors.black, fontSize: 15),
             )),

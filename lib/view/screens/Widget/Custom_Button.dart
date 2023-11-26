@@ -4,7 +4,7 @@ import '../../../StaticColors.dart';
 class CustomButton extends StatelessWidget {
   final Function() press;
   final String title;
-  CustomButton({
+  const CustomButton({
     super.key, required this.press, required this.title,
   });
 

@@ -7,8 +7,9 @@ import 'MyCustomClipper.dart';
 class BackGround extends StatelessWidget {
   final double height;
   final String title;
+  final double h;
   const BackGround({
-    super.key, required this.height, required this.title,
+    super.key, required this.height, required this.title, required this.h,
   });
 
   @override
@@ -25,17 +26,21 @@ class BackGround extends StatelessWidget {
         ),
          SizedBox(
           width: getProportionateScreenWidth(375),
-          height: getProportionateScreenHeight(350),
+          height: height,
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SizedBox(height: getProportionateScreenHeight(70)),
-              Image.asset("assets/images/logo.png",
-                  width: getProportionateScreenWidth(200),
-                  height: getProportionateScreenHeight(100)),
-              SizedBox(height: getProportionateScreenHeight(130)),
+              Expanded(
+                child: Container(
+                    width: getProportionateScreenWidth(200),
+                    height: getProportionateScreenHeight(100),
+                    alignment: Alignment.bottomCenter,
+                    child: Image.asset("assets/images/logo.png",),),
+              ),
+              SizedBox(height: getProportionateScreenHeight(h)),
               Text(title,
+                  textAlign: TextAlign.center,
                   style: const TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
