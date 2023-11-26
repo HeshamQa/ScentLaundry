@@ -11,14 +11,13 @@ class TextForm extends StatelessWidget {
 
     return TextFormField(
       controller: textEditingController,
-      // validator: (value) => validateText(value!),
       obscureText: obscure,
       style: const TextStyle(color: Colors.black,fontSize: 15),
       maxLines: 1,
       decoration: InputDecoration(
         errorMaxLines: 1,
         hintText: hint,
-        hintStyle: const TextStyle(fontWeight: FontWeight.normal,color: Colors.black,fontSize: 15,),
+        hintStyle: const TextStyle(fontWeight: FontWeight.normal,color: Colors.grey,fontSize: 16,fontFamily: 'Inter',),
       ),
     );
   }

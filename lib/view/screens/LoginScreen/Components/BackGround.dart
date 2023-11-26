@@ -25,7 +25,7 @@ class BackGround extends StatelessWidget {
         ),
          SizedBox(
           width: getProportionateScreenWidth(375),
-          height: getProportionateScreenHeight(400),
+          height: getProportionateScreenHeight(350),
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -34,7 +34,7 @@ class BackGround extends StatelessWidget {
               Image.asset("assets/images/logo.png",
                   width: getProportionateScreenWidth(200),
                   height: getProportionateScreenHeight(100)),
-              SizedBox(height: getProportionateScreenHeight(170)),
+              SizedBox(height: getProportionateScreenHeight(130)),
               Text(title,
                   style: const TextStyle(
                     fontSize: 30,
