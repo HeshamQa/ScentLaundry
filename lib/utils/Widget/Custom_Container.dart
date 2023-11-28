@@ -11,15 +11,13 @@ class CustomContainer extends StatelessWidget {
     return Container(
         alignment: Alignment.bottomCenter,
         padding: EdgeInsets.only(
-            // left: getProportionateScreenWidth(30),
             top: getProportionateScreenHeight(25),
-            // bottom: getProportionateScreenHeight(5)
         ),
         decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(22),
-                topRight: Radius.circular(22))),
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30))),
         child:child,
     );
   }
