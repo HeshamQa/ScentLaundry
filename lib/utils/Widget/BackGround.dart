@@ -58,13 +58,18 @@ class MyCustomClipper extends CustomClipper<Path> {
     double triangleWidth = getProportionateScreenWidth(360);
     double triangleHeight = getProportionateScreenHeight(125);
     double trianglePosition = (size.width - triangleWidth) / 2;
+    double curveHeight = getProportionateScreenHeight(20);
 
     path.lineTo(0, size.height);
     path.lineTo(size.width, size.height);
     path.lineTo(size.width, 0);
 
+    // Add a curve to the top middle
     path.moveTo(trianglePosition, size.height);
-    path.lineTo(trianglePosition + triangleWidth / 2, size.height - triangleHeight);
+    path.lineTo(trianglePosition + triangleWidth / 2 - curveHeight, size.height - triangleHeight);
+    path.quadraticBezierTo(
+        trianglePosition + triangleWidth / 2, size.height - triangleHeight - curveHeight,
+        trianglePosition + triangleWidth / 2 + curveHeight, size.height - triangleHeight);
     path.lineTo(trianglePosition + triangleWidth, size.height);
 
     path.close();
