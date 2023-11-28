@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../Static/StaticColors.dart';
+import '../../../utils/Static/StaticColors.dart';
 
 class LogInButton extends StatelessWidget {
   const LogInButton({

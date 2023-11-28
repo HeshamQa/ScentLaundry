@@ -1,39 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:scentlaundry/view/screens/SignUpScreen/components/LogInButton.dart';
-import '../../../Static/Size_Config.dart';
-import '../Widget/BackGround.dart';
-import '../Widget/Custom_Button.dart';
-import '../Widget/Social_Button.dart';
-import '../Widget/TextForm.dart';
+import 'package:get/get.dart';
+import '../../utils/Static/Route.dart';
+import '../../utils/Static/Size_Config.dart';
+import '../../utils/Widget/BackGround.dart';
+import '../../utils/Widget/Custom_Button.dart';
+import '../../utils/Widget/Social_Button.dart';
+import '../../utils/Widget/TextForm.dart';
+import '../ForgetPassword/ForgetPassword.dart';
+import 'Components/SignUpButton.dart';
 
-class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
-
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     TextEditingController phoneEditingController = TextEditingController();
-    TextEditingController passwordTextEditingController = TextEditingController();
+    TextEditingController passwordTextEditingController =
+        TextEditingController();
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: Column(
           children: [
-            BackGround(
-                height: getProportionateScreenHeight(290), title: "Sign Up",h: 115),
-            SizedBox(height: getProportionateScreenHeight(15)),
+            BackGround(height: getProportionateScreenHeight(315), title: "LogIn", h: 150,),
+            SizedBox(
+              height: getProportionateScreenHeight(15),
+            ),
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenHeight(30)),
               child: SizedBox(
-                height: getProportionateScreenHeight(470),
+                height: getProportionateScreenHeight(435),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    TextForm(
-                        textEditingController: phoneEditingController,
-                        obscure: false,
-                        hint: "User Name"),
                     TextForm(
                         textEditingController: phoneEditingController,
                         obscure: false,
@@ -42,12 +43,18 @@ class SignUpScreen extends StatelessWidget {
                         textEditingController: passwordTextEditingController,
                         obscure: true,
                         hint: "Password"),
-                    TextForm(
-                        textEditingController: passwordTextEditingController,
-                        obscure: true,
-                        hint: "Reset Password"),
+                    InkWell(
+                      onTap: () {
+                        // Get.toNamed(Approute.ForgetScreen);
+                        showModalBottomSheet(context: context, builder: (context) => const ForgetPassword(),);
+                      },
+                      child:
+                          const Text("Forgot?", style: TextStyle(fontSize: 18)),
+                    ),
                     CustomButton(
-                      press: () {},
+                      press: () {
+                        Get.offAllNamed(Approute.HomeScreen);
+                      },
                       title: 'Log In',
                     ),
                     const Row(
@@ -71,7 +78,8 @@ class SignUpScreen extends StatelessWidget {
                         )
                       ],
                     ),
-                    const LogInButton(),
+                    const SignUpButton(),
+
                   ],
                 ),
               ),

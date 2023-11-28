@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../Static/Size_Config.dart';
+
+import '../Static/Size_Config.dart';
 
 class BackGround extends StatelessWidget {
   final double height;

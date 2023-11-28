@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:scentlaundry/Static/Route.dart';
-import 'package:scentlaundry/view/screens/LoginScreen/LoginScreen.dart';
-
+import 'package:scentlaundry/screens/LoginScreen/LoginScreen.dart';
+import 'package:scentlaundry/utils/Static/Route.dart';
 void main() {
   runApp(const MyApp());
 }

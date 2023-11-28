@@ -1,9 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:scentlaundry/Static/Route.dart';
-
-import '../../../../Static/StaticColors.dart';
+import '../../../utils/Static/Route.dart';
+import '../../../utils/Static/StaticColors.dart';
 
 class SignUpButton extends StatelessWidget {
   const SignUpButton({
