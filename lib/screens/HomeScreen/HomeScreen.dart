@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:scentlaundry/screens/HomeScreen/components/HeaderText.dart';
 import 'package:scentlaundry/screens/HomeScreen/components/PopularCategories.dart';
+import 'package:scentlaundry/screens/HomeScreen/components/drawer.dart';
+import 'package:scentlaundry/screens/HomeScreen/components/drawer_elements.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Container.dart';
 import '../../utils/Static/Size_Config.dart';
 import '../../utils/Static/StaticColors.dart';
@@ -31,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
         backgroundColor: StaticColors.primaryColor,
       ),
-      drawer: const Drawer(),
+      drawer: const CustomDrawer(),
       backgroundColor: StaticColors.primaryColor,
       body: SingleChildScrollView(
         child: Column(
