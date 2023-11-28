@@ -10,7 +10,7 @@ class Categories extends StatelessWidget {
       height: getProportionateScreenHeight(110),
       child: ListView.builder(
         padding: const EdgeInsets.only(
-          left: 15,
+          right: 15,
         ),
         itemCount: 7,
         scrollDirection: Axis.horizontal,
@@ -18,13 +18,14 @@ class Categories extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(
             children: [
-              Image.network(
-                "https://images.squarespace-cdn.com/content/v1/55fc0004e4b069a519961e2d/1442590746571-RPGKIXWGOO671REUNMCB/image-asset.gif",
+              Image.asset(
+                "assets/images/banner.jpg",
+                fit: BoxFit.cover,
                 width: getProportionateScreenWidth(50),
                 height: getProportionateScreenHeight(50),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 6.0),
+                padding: const EdgeInsets.only(top: 6.0),
                 child: SizedBox(
                     width: getProportionateScreenWidth(60),
                     child: const Text(

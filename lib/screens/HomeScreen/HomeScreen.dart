@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:scentlaundry/screens/HomeScreen/components/HeaderText.dart';
+import 'package:scentlaundry/screens/HomeScreen/components/PopularCategories.dart';
+import 'package:scentlaundry/utils/Widget/Custom_Container.dart';
 import '../../utils/Static/Size_Config.dart';
 import '../../utils/Static/StaticColors.dart';
 import 'components/BannerImage.dart';
 import 'components/Categories.dart';
+import 'components/SubCategories.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,39 +33,25 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       drawer: const Drawer(),
       backgroundColor: StaticColors.primaryColor,
-      body: Column(
-        children: [
-          const BannerImage(),
-          const Categories(),
-          Container(
-
-            alignment: Alignment.bottomCenter,
-            padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(15),
-                vertical: getProportionateScreenHeight(25)),
-            decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20))),
-            child: Column(children: [
-              const Text("Most Popular",
-                  style: TextStyle(fontSize: 20),
-                  textAlign: TextAlign.start),
-              GridView(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const BannerImage(),
+            const Categories(),
+            CustomContainer(
+              child: Column(
                 children: [
-                  Stack(
-                    children: [
-                      Image.network("https://images.squarespace-cdn.com/content/v1/55fc0004e4b069a519961e2d/1442590746571-RPGKIXWGOO671REUNMCB/image-asset.gif",width: getProportionateScreenWidth(150),),
-                    ],
-                  )
+                  const HeaderText(text: "Most Popular"),
+                  SizedBox(height: getProportionateScreenHeight(10)),
+                  const PopularCategories(),
+                  const HeaderText(text: "Subscriptions"),
+                  SizedBox(height: getProportionateScreenHeight(10)),
+                  const SubCategories()
                 ],
               ),
-
-            ]),
-          ),
-        ],
+            ),
+          ],
+        ),
       ),
     );
   }

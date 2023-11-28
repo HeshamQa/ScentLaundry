@@ -6,17 +6,26 @@ class BannerImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: getProportionateScreenWidth(375),
-      margin: EdgeInsets.symmetric(
-          horizontal: getProportionateScreenWidth(15),
-          vertical: getProportionateScreenHeight(25)),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+    PageController pageController=PageController(initialPage: 0,keepPage: false,);
+    return SizedBox(
+      height: getProportionateScreenHeight(180),
+      child: PageView.builder(
+        itemCount: 3,
+        controller: pageController,
+        scrollDirection: Axis.horizontal,
+        itemBuilder: (context, index) =>  Container(
+            width: getProportionateScreenWidth(375),
+            margin: EdgeInsets.symmetric(
+                horizontal: getProportionateScreenWidth(15),
+                vertical: getProportionateScreenHeight(25)),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset("assets/images/banner.jpg", fit: BoxFit.cover)),
+          ),
       ),
-      child: ClipRRect(
-          borderRadius: BorderRadius.circular(10),
-          child: Image.asset("assets/images/bannre.jpg", fit: BoxFit.fill)),
     );
   }
 }
