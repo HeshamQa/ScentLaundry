@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart))
         ],
-        backgroundColor: StaticColors.primaryColor,
+        backgroundColor: StaticColors.black,
       ),
       drawer: const Drawer(),
       backgroundColor: StaticColors.primaryColor,
