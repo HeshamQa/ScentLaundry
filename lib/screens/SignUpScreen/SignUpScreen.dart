@@ -34,19 +34,19 @@ class SignUpScreen extends StatelessWidget {
                     TextForm(
                         textEditingController: phoneEditingController,
                         obscure: false,
-                        hint: "User Name"),
+                        hint: "User Name", enabled: true,),
                     TextForm(
                         textEditingController: phoneEditingController,
                         obscure: false,
-                        hint: "Phone"),
+                        hint: "Phone", enabled: true,),
                     TextForm(
                         textEditingController: passwordTextEditingController,
                         obscure: true,
-                        hint: "Password"),
+                        hint: "Password", enabled: true,),
                     TextForm(
                         textEditingController: passwordTextEditingController,
                         obscure: true,
-                        hint: "Reset Password"),
+                        hint: "Reset Password", enabled: true,),
                     CustomButton(
                       press: () {},
                       title: 'Log In',

@@ -19,7 +19,7 @@ class ForgetPassword extends StatelessWidget {
           TextForm(
               textEditingController: phoneEditingController,
               obscure: false,
-              hint: "Enter Phone Number"),
+              hint: "Enter Phone Number", enabled: true,),
           SizedBox(height: getProportionateScreenHeight(30)),
           CustomButton(press: () {}, title: "Next"),
         ],

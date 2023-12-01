@@ -80,15 +80,15 @@ flutter:
   fonts:
     - family: reg
       fonts:
-          - asset: assets/font/Inter/static/Inter-Regular.ttf
+          - asset: assets/font/Roboto/Roboto-Regular.ttf
     - family: Inter bold
       fonts:
-        - asset: assets/font/Inter/static/Inter-Bold.ttf
+        - asset: assets/font/Roboto/Roboto-Bold.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
     - family: Inter
       fonts:
-        - asset: assets/font/Inter/static/Inter-SemiBold.ttf
+        - asset: assets/font/Roboto/Roboto-Medium.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
