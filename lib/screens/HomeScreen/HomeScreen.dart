@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:scentlaundry/screens/HomeScreen/components/HeaderText.dart';
 import 'package:scentlaundry/screens/HomeScreen/components/PopularCategories.dart';
 import 'package:scentlaundry/screens/HomeScreen/components/drawer.dart';
-import 'package:scentlaundry/screens/HomeScreen/components/drawer_elements.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Container.dart';
 import '../../utils/Static/Size_Config.dart';
 import '../../utils/Static/StaticColors.dart';
@@ -22,7 +21,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: Image.asset(
           "assets/images/logo.png",
           width: getProportionateScreenWidth(125),
@@ -31,7 +29,6 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart))
         ],
-        backgroundColor: StaticColors.primaryColor,
       ),
       drawer: const CustomDrawer(),
       backgroundColor: StaticColors.primaryColor,
