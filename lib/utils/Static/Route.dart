@@ -5,6 +5,7 @@ import 'package:scentlaundry/screens/SubDetails/SubDetails.dart';
 import '../../screens/ForgetPassword/ForgetPassword.dart';
 import '../../screens/HomeScreen/HomeScreen.dart';
 import '../../screens/LoginScreen/LoginScreen.dart';
+import '../../screens/PlaceOrder/PlaceOrder.dart';
 import '../../screens/ProfileScreen/ProfileScreen.dart';
 import '../../screens/SignUpScreen/SignUpScreen.dart';
 
@@ -17,6 +18,7 @@ Map<String, Widget Function(BuildContext)> route = {
   Approute.CategoryScreen:(context) => const CategoryScreen(),
   Approute.SubDetails:(context) => const SubDetails(),
   Approute.ProfileScreen:(context) => const ProfileScreen(),
+  Approute.PlaceOrder:(context) => const PlaceOrder(),
   };
   class Approute {
     static const String Login = "/LoginScreen";
@@ -27,4 +29,5 @@ Map<String, Widget Function(BuildContext)> route = {
     static const String CartScreen="/CartScreen";
     static const String SubDetails="/SubDetails";
     static const String ProfileScreen="/ProfileScreen";
+    static const String PlaceOrder="/PlaceOrder";
   }

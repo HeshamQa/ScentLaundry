@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:scentlaundry/utils/Static/Route.dart';
 import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Button.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Container.dart';
@@ -103,7 +105,7 @@ class _CartScreenState extends State<CartScreen> {
                     Text("11.50 JOD",style: TextStyle(fontSize: 22),)
                   ],
                 ),
-                CustomButton(press: (){}, title: "Place Order")
+                CustomButton(press: (){Get.toNamed(Approute.PlaceOrder);}, title: "Place Order")
               ],
             ),
                 )
