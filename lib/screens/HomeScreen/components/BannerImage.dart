@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scentlaundry/data/remote/BannerList.dart';
 import '../../../utils/Static/Size_Config.dart';
 
 class BannerImage extends StatelessWidget {
@@ -10,7 +11,7 @@ class BannerImage extends StatelessWidget {
     return SizedBox(
       height: getProportionateScreenHeight(180),
       child: PageView.builder(
-        itemCount: 3,
+        itemCount: bannerList.length,
         controller: pageController,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) =>  Container(
@@ -20,13 +21,13 @@ class BannerImage extends StatelessWidget {
                 vertical: getProportionateScreenHeight(25)),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(color: Colors.black54,blurRadius: 10,offset: Offset(4, 4))
               ]
             ),
             child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
-                child: Image.asset("assets/images/banner.jpg", fit: BoxFit.cover)),
+                child: Image.asset(bannerList[index].image, fit: BoxFit.cover)),
           ),
       ),
     );

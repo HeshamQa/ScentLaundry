@@ -1,13 +1,15 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../data/models/SubscribeModel.dart';
 import '../../../utils/Static/Size_Config.dart';
 import '../../../utils/Widget/Custom_Button.dart';
 import '../../../utils/Widget/Custom_Container.dart';
 
 class SubBody extends StatelessWidget {
+  final SubscribeModel subscribeModel;
   const SubBody({
-    super.key,
+    super.key,required this.subscribeModel,
   });
 
   @override
@@ -19,18 +21,15 @@ class SubBody extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "100 Item - 75JOD",
-              style: TextStyle(fontSize: 27),
+            Text(
+              "${subscribeModel.name} - ${subscribeModel.price}JOD",
+              style: const TextStyle(fontSize: 27),
             ),
             SizedBox(
               height: getProportionateScreenHeight(10),
             ),
-            const Text(
-              "The subscription containing 100 pieces"
-                  " of (T-Shirt, Pants, Short, underwear,"
-                  " Sucks, shoes) for only 75 JOD.",
-              style: TextStyle(fontSize: 19, fontFamily: 'reg'),
+            Text(subscribeModel.desc,
+              style: const TextStyle(fontSize: 19, fontFamily: 'reg'),
             ),
             SizedBox(
               height: getProportionateScreenHeight(10),
