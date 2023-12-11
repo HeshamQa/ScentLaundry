@@ -38,11 +38,11 @@ class LoginScreen extends StatelessWidget {
                     TextForm(
                         textEditingController: phoneEditingController,
                         obscure: false,
-                        hint: "Phone"),
+                        hint: "Phone", enabled: true,),
                     TextForm(
                         textEditingController: passwordTextEditingController,
                         obscure: true,
-                        hint: "Password"),
+                        hint: "Password", enabled: true,),
                     InkWell(
                       onTap: () {
                         // Get.toNamed(Approute.ForgetScreen);

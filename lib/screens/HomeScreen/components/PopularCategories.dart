@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scentlaundry/data/remote/PopularList.dart';
 
 import '../../../utils/Static/Size_Config.dart';
 
@@ -12,7 +13,7 @@ class PopularCategories extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(left: getProportionateScreenWidth(25)),
       child: GridView.builder(
-          itemCount: 4,
+          itemCount: popularList.length,
           itemBuilder: (context, index) => InkWell(
             onTap: (){},
             child: Stack(
@@ -26,7 +27,7 @@ class PopularCategories extends StatelessWidget {
                             offset: Offset(0, 4))
                       ]),
                       child: Image.asset(
-                        "assets/images/banner.jpg",
+                        popularList[index].image,
                         width: getProportionateScreenWidth(150),
                         height: getProportionateScreenHeight(150),
                         fit: BoxFit.cover,
@@ -37,9 +38,9 @@ class PopularCategories extends StatelessWidget {
                       height: getProportionateScreenHeight(150),
                       alignment: Alignment.center,
                       color: Colors.black45,
-                      child: const Text(
-                        "Categories Name",
-                        style: TextStyle(color: Colors.white, fontSize: 17),
+                      child: Text(
+                        popularList[index].name,
+                        style: const TextStyle(color: Colors.white, fontSize: 17),
                       ),
                     ),
                   ],
