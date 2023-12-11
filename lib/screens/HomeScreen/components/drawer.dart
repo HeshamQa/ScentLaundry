@@ -22,16 +22,16 @@ class CustomDrawer extends StatelessWidget {
           ),
           DrawerElements(
             icon: Icons.request_page_outlined,
-            text: "Orders", ontap: (){},
+            text: "Orders", ontap: (){Get.toNamed(Approute.MyOrder);},
           ),
           DrawerElements(
-            ontap: (){},
+            ontap: (){Get.toNamed(Approute.ContactUs);},
             icon: Icons.chat_bubble_outline,
             text: "Contact us"
           ),
            DrawerElements(
             icon: Icons.wallet_outlined,
-            text: "Wallet", ontap: (){},
+            text: "Wallet", ontap: (){Get.toNamed(Approute.WalletScreen);},
           ),
            DrawerElements(icon: Icons.subscriptions_outlined, text:"MySubscription", ontap: (){},),
           const Spacer(),
