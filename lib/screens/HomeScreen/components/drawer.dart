@@ -33,7 +33,9 @@ class CustomDrawer extends StatelessWidget {
             icon: Icons.wallet_outlined,
             text: "Wallet", ontap: (){},
           ),
-           DrawerElements(icon: Icons.subscriptions_outlined, text:"MySubscription", ontap: (){},),
+           DrawerElements(icon: Icons.subscriptions_outlined, text:"MySubscription", ontap: (){
+                  Get.toNamed(Approute.Subscriptions);
+           },),
           const Spacer(),
            DrawerElements(
             icon: Icons.policy_outlined,
