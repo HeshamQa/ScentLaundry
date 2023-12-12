@@ -17,21 +17,19 @@ class Contact_Us extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.only(top: getProportionateScreenHeight(150)),
         child: CustomContainer(
-            child: Column(
-          children: [
-            ContactUs(
-              companyName: 'Scent Laundry',
-              textColor: Colors.black,
-              cardColor: Colors.white,
-              companyColor: StaticColors.primaryColor,
-              taglineColor: Colors.white,
-              email: 'QaoudQa@gmail.com',
-              phoneNumber: '0788828337',
-              instagram: 'www.instagram.com/scentlaundry/',
-              facebookHandle: 'www.facebook.com/scentlaundry/',
-            ),
-          ],
-        )),
+            child: Center(
+              child: ContactUs(
+                companyName: 'Scent Laundry',
+                textColor: Colors.black,
+                cardColor: Colors.white,
+                companyColor: StaticColors.primaryColor,
+                taglineColor: Colors.white,
+                email: 'QaoudQa@gmail.com',
+                phoneNumber: '0788828337',
+                instagram: 'www.instagram.com/scentlaundry/',
+                facebookHandle: 'www.facebook.com/scentlaundry/',
+              ),
+            )),
       ),
     );
   }
