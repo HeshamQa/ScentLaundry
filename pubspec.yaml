@@ -39,10 +39,7 @@ dependencies:
   get: ^4.6.5
   google_maps_flutter: ^2.5.0
   geolocator: ^10.1.0
-  date_picker_timeline: ^1.2.5
-  date_time_picker_widget: ^2.0.0
-  time_slot: any
-  time_range_picker: ^2.2.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
