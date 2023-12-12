@@ -1,6 +1,7 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:scentlaundry/controller/timecontroller.dart';
 import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
