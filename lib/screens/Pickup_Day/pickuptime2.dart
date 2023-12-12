@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:scentlaundry/utils/Static/Route.dart';
 import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Button.dart';
@@ -39,7 +41,7 @@ class _pickuptimeState extends State<pickuptime2> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(40.0) , vertical: getProportionateScreenHeight(20)),
                   child: CustomButton(press: () {
-
+                    Get.toNamed(Approute.PaymentScreen);
                   }, title: "Next"),
                 )
               ],
