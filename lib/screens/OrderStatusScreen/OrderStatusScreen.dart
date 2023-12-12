@@ -12,9 +12,7 @@ class OrderStatusScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Order Details'),
-      ),
+      appBar: AppBar(title: const Text('Order Details')),
       backgroundColor: StaticColors.primaryColor,
       body: Padding(
         padding: EdgeInsets.only(top: getProportionateScreenHeight(75)),
@@ -48,7 +46,11 @@ class OrderStatusScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(
                   vertical: getProportionateScreenHeight(20),
                   horizontal: getProportionateScreenWidth(25)),
-              child: CustomButton(press: (){Get.offAllNamed(Approute.HomeScreen);}, title: "Back To Home"),
+              child: CustomButton(
+                  press: () {
+                    Get.offAllNamed(Approute.HomeScreen);
+                  },
+                  title: "Back To Home"),
             ),
           ],
         )),
