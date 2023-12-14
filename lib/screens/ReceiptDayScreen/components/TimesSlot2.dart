@@ -3,14 +3,14 @@ import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
 import '../../../controller/timecontroller.dart';
 
-class Timespicker2 extends StatefulWidget {
-  const Timespicker2({Key? key}) : super(key: key);
+class TimesPicker2 extends StatefulWidget {
+  const TimesPicker2({Key? key}) : super(key: key);
 
   @override
-  State<Timespicker2> createState() => _TimespickerState();
+  State<TimesPicker2> createState() => _TimesPickerState();
 }
 
-class _TimespickerState extends State<Timespicker2> {
+class _TimesPickerState extends State<TimesPicker2> {
   var val = 0;
   var val2 = " ";
   TimeController timeController = TimeController();

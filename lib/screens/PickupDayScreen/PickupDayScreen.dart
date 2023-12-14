@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
@@ -23,7 +22,7 @@ class _PickupDayScreenState extends State<PickupDayScreen> {
     return Scaffold(
       backgroundColor: StaticColors.primaryColor,
       appBar: AppBar(
-        title: Text("Choose a Pick Up time"),
+        title: const Text("Choose a Pick Up time"),
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 80.0),
@@ -32,11 +31,11 @@ class _PickupDayScreenState extends State<PickupDayScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Choose Pick Up Day",style: TextStyle(fontSize: 30)),
+                const Text("Choose Pick Up Day",style: TextStyle(fontSize: 30)),
                 SizedBox(height: getProportionateScreenHeight(20),),
-                DatesTime(),
-                Text("Choose Pick Up Time",style: TextStyle(fontSize: 30)),
-                Timespicker(),
+                const DatesTime(),
+                const Text("Choose Pick Up Time",style: TextStyle(fontSize: 30)),
+                const TimesPicker(),
                 SizedBox(height: getProportionateScreenHeight(15),),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(40.0) , vertical: getProportionateScreenHeight(20)),

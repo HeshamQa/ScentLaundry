@@ -34,7 +34,7 @@ class _ReceiptTimeState extends State<ReceiptTime> {
                 SizedBox(height: getProportionateScreenHeight(20),),
                 const DatesTime(),
                 const Text("Choose Receipt Time",style: TextStyle(fontSize: 30)),
-                const Timespicker2(),
+                const TimesPicker2(),
                 SizedBox(height: getProportionateScreenHeight(15),),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(40.0) , vertical: getProportionateScreenHeight(20)),
