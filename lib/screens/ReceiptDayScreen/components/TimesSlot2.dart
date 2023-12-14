@@ -17,9 +17,6 @@ class _TimespickerState extends State<Timespicker2> {
 
   @override
   Widget build(BuildContext context) {
-    int nowHour = DateTime.now().hour;
-    int selectedDay = timeController.selectedValue.value.day;
-    int selectedHour = nowHour;
     int time = 0;
     return Column(
       children: [
