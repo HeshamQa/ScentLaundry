@@ -1,19 +1,18 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scentlaundry/controller/timecontroller.dart';
 import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
 
-class datetime2 extends StatefulWidget {
-  const datetime2({super.key});
+class DatesTime extends StatefulWidget {
+  const DatesTime({super.key});
 
   @override
-  State<datetime2> createState() => _datetimeState();
+  State<DatesTime> createState() => _DatesTimeState();
 }
 late DateTime selectedValue;
 TimeController timeController = TimeController();
-class _datetimeState extends State<datetime2> {
+class _DatesTimeState extends State<DatesTime> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,14 +20,13 @@ class _datetimeState extends State<datetime2> {
       children: <Widget>[
         DatePicker(
           height: getProportionateScreenHeight(100),
-          DateTime.now().add(Duration(days: 1)),
-          initialSelectedDate: DateTime.now().add(Duration(days: 1)),
+          DateTime.now(),
+          initialSelectedDate: DateTime.now(),
           selectionColor: StaticColors.blue,
           selectedTextColor: Colors.white,
           onDateChange: (date) {
             setState(() {
               selectedValue = date;
-              print(selectedValue.day);
               DateTime currentDate = DateTime.now();
               timeController.updateSelectedValue(currentDate);
             });

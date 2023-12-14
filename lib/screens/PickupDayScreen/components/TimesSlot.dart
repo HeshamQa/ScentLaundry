@@ -37,11 +37,9 @@ class _TimespickerState extends State<Timespicker> {
                     setState(() {
                       val = 1;
                       val2 = "12:00 pm - 3:00 pm";
-                      print(time);
-                      print(timeController.selectedValue.value.day);
                     });
                   },
-                  child: Text("12:00 pm - 3:00 pm", style: TextStyle(color: Colors.black)),
+                  child: const Text("12:00 pm - 3:00 pm", style: TextStyle(color: Colors.black)),
                 ),
               if (time < 17)
                 MaterialButton(
@@ -49,11 +47,9 @@ class _TimespickerState extends State<Timespicker> {
                   onPressed: () {
                     setState(() {
                       val = 2; val2 = "3:00 pm - 6:00 pm";
-                      print(time);
-                      print(timeController.selectedValue.value.day);
                     });
                   },
-                  child: Text("3:00 pm - 6:00 pm"),
+                  child: const Text("3:00 pm - 6:00 pm"),
                 ),
               if (time < 20)
                 MaterialButton(
@@ -61,11 +57,9 @@ class _TimespickerState extends State<Timespicker> {
                   onPressed: () {
                     setState(() {
                       val = 3; val2 = "6:00 pm - 9:00 pm";
-                      print(time);
-                      print(timeController.selectedValue.value.day);
                     });
                   },
-                  child: Text("6:00 pm - 9:00 pm"),
+                  child: const Text("6:00 pm - 9:00 pm"),
                 ),
               if (time < 23)
                 MaterialButton(
@@ -73,14 +67,13 @@ class _TimespickerState extends State<Timespicker> {
                   onPressed: () {
                     setState(() {
                       val = 4;
-                      print(time); val2 = "9:00 pm - 00:00 pm";
-                      print(timeController.selectedValue.value.day);
+                      val2 = "9:00 pm - 00:00 pm";
                     });
                   },
-                  child: Text("9:00 pm - 00:00 pm"),
+                  child: const Text("9:00 pm - 00:00 pm"),
                 )
               else
-                Text("The time is not available"),
+                const Text("The time is not available"),
             ],
           ),
         ),  SizedBox(height: getProportionateScreenHeight(25),),
@@ -93,7 +86,7 @@ class _TimespickerState extends State<Timespicker> {
         RichText(text: TextSpan(children:
         [
           TextSpan(text: "Receipt Time : ",style: TextStyle(fontSize: 25 ,color: StaticColors.black)),
-          TextSpan(text:  "${val2}",style: TextStyle(fontSize: 25,color: StaticColors.blue))
+          TextSpan(text:  val2,style: TextStyle(fontSize: 25,color: StaticColors.blue))
         ])),
       ],
     );
