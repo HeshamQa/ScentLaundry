@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "75482759632",
+    "project_id": "scentlaundry",
+    "storage_bucket": "scentlaundry.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75482759632:android:f0c0444ffa7096be64b9d5",
+        "android_client_info": {
+          "package_name": "com.example.scentlaundry"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiPHL8r4HI7kX6HaNIGrlKZKNvAXDNt0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
