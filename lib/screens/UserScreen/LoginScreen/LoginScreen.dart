@@ -1,6 +1,8 @@
+import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:scentlaundry/utils/Static/StaticColors.dart';
 import '../../../utils/Static/Route.dart';
 import '../../../utils/Static/Size_Config.dart';
 import '../../../utils/Widget/BackGround.dart';
@@ -78,11 +80,29 @@ class _LoginScreenState extends State<LoginScreen> {
                           Get.offAllNamed(Approute.HomeScreen);
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'user-not-found') {
-                            print(
-                                '======================No user found for that email.');
+                            return AwesomeDialog(
+                                context: context,
+                                dialogType: DialogType.error,
+                                animType: AnimType.rightSlide,
+                                title: 'User Not Found',
+                                desc: '',
+                                btnCancelOnPress: () {},
+                        btnOkOnPress: () {},
+                              btnCancelColor: Colors.grey,
+                              btnOkColor: StaticColors.primaryColor
+                        ).show();
                           } else if (e.code == 'wrong-password') {
-                            print(
-                                '======================Wrong password provided for that user.');
+                            return AwesomeDialog(
+                                context: context,
+                                dialogType: DialogType.error,
+                                animType: AnimType.rightSlide,
+                                title: 'User Not Found',
+                                desc: '',
+                                btnCancelOnPress: () {},
+                                btnOkOnPress: () {},
+                                btnCancelColor: Colors.grey,
+                                btnOkColor: StaticColors.primaryColor
+                            ).show();
                           }
                         }
                       },

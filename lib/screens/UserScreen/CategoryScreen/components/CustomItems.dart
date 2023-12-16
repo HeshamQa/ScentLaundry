@@ -49,7 +49,9 @@ class _CustomItemsState extends State<CustomItems> {
               const Spacer(flex: 2,),
               Text(widget.data[widget.cindex]['price'],style: TextStyle(fontSize: 16,fontFamily: 'Inter'),),
               const Spacer(flex: 2,),
-              const Text("-",style: TextStyle(fontSize: 25),),
+              InkWell(
+                  onTap: (){},
+                  child: const Text("-",style: TextStyle(fontSize: 25),)),
               const Spacer(flex: 1,),
               Text(widget.data[widget.cindex]['counter'],style: TextStyle(fontSize:20),),
               const Spacer(flex: 1,),
