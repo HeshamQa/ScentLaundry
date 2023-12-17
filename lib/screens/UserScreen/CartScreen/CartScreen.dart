@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scentlaundry/screens/UserScreen/CartScreen/components/BottomContainer.dart';
 import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import '../../../utils/Static/StaticColors.dart';
 import 'components/CartItems.dart';
@@ -25,7 +26,7 @@ class _CartScreenState extends State<CartScreen> {
             height: getProportionateScreenHeight(550),
             child: const CartItems(),
           ),
-
+          const BottomContainer(),
         ],
       ),
     );

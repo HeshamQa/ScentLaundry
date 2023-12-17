@@ -6,9 +6,8 @@ import '../../../../utils/Static/Size_Config.dart';
 
 class CustomItems extends StatefulWidget {
   final List<QueryDocumentSnapshot> data;
-  final int cindex;
   const CustomItems({
-    super.key, required this.data, required this.cindex,
+    super.key, required this.data,
   });
 
   @override
@@ -21,7 +20,7 @@ class _CustomItemsState extends State<CustomItems> {
     return Padding(
       padding: EdgeInsets.only(bottom: getProportionateScreenHeight(40)),
       child: ListView.builder(
-        itemCount: 1,
+        itemCount: widget.data.length,
         itemBuilder: (context, index) => Container(
           height: getProportionateScreenHeight(85),
           width: getProportionateScreenWidth(375),
@@ -39,21 +38,21 @@ class _CustomItemsState extends State<CustomItems> {
           child: Row(
             children: [
               Image.network(
-                widget.data[widget.cindex]['SubImage'],
+                widget.data[index]['Image'],
                 height: getProportionateScreenHeight(65),
                 width: getProportionateScreenWidth(85),
                 fit: BoxFit.fill,
               ),
               const Spacer(flex: 1,),
-              Text(widget.data[widget.cindex]['SubName'],style: TextStyle(fontSize: 20),),
+              Text(widget.data[index]['Name'],style: const TextStyle(fontSize: 20),),
               const Spacer(flex: 2,),
-              Text(widget.data[widget.cindex]['price'],style: TextStyle(fontSize: 16,fontFamily: 'Inter'),),
+              Text('${widget.data[index]['price']}JOD',style: const TextStyle(fontSize: 16,fontFamily: 'Inter'),),
               const Spacer(flex: 2,),
               InkWell(
                   onTap: (){},
                   child: const Text("-",style: TextStyle(fontSize: 25),)),
               const Spacer(flex: 1,),
-              Text(widget.data[widget.cindex]['counter'],style: TextStyle(fontSize:20),),
+              const Text('0',style: TextStyle(fontSize:20),),
               const Spacer(flex: 1,),
               const Text("+",style: TextStyle(fontSize: 25),),
               const Spacer(flex: 1,),

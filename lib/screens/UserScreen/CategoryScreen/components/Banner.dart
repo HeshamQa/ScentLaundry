@@ -1,9 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../utils/Static/Size_Config.dart';
 
 class Baner extends StatelessWidget {
-  const Baner({super.key});
+  final List<QueryDocumentSnapshot> data;
+  final int index;
+  const Baner({super.key, required this.data, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +18,15 @@ class Baner extends StatelessWidget {
           vertical: getProportionateScreenHeight(25)),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(color: Colors.black54,blurRadius: 10,offset: Offset(4, 4))
-        ]
+        ],
       ),
       child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: Hero(
-              tag: "123",
-              child: Image.asset("assets/images/banner.jpg", fit: BoxFit.cover))),
+              tag: data[index].id,
+              child: Image.network(data[index]['PopImage'], fit: BoxFit.fill))),
     );
   }
 }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:scentlaundry/screens/UserScreen/HomeScreen/HomeScreen.dart';
 import 'package:scentlaundry/screens/UserScreen/LoginScreen/LoginScreen.dart';
+
 import 'package:scentlaundry/utils/Static/Route.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
 
@@ -23,13 +24,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  bool isLoggedIn=false;
   @override
   void initState() {
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
       if (user == null) {
+        isLoggedIn=false;
         print('User is currently signed out!');
       } else {
         print('User is signed in!');
+        isLoggedIn=true;
       }
     });
     super.initState();
@@ -49,10 +53,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlueAccent),
         useMaterial3: true,
       ),
-      home: (FirebaseAuth.instance.currentUser != null &&
-              FirebaseAuth.instance.currentUser!.emailVerified)
-          ? const HomeScreen()
-          : const LoginScreen(),
+      home: isLoggedIn ? const HomeScreen() : const LoginScreen(),
       routes: route,
     );
   }

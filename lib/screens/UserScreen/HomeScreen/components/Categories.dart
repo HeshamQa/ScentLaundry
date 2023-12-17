@@ -29,10 +29,10 @@ class _CategoriesState extends State<Categories> {
             child: Column(
               children: [
                 Hero(
-                  tag: data[index]['Image'],
+                  tag: data[index].id,
                   child: Image.network(
                     data[index]['Image'],
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                     width: getProportionateScreenWidth(65),
                     height: getProportionateScreenHeight(60),
                   ),
@@ -43,7 +43,7 @@ class _CategoriesState extends State<Categories> {
                       width: getProportionateScreenWidth(60),
                       child: Text(
                         data[index]['Name'],
-                        maxLines: 2,
+                        maxLines: 1,
                         textAlign: TextAlign.center,
                         style: const TextStyle(
                             color: Colors.black,

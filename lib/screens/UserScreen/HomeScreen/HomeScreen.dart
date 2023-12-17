@@ -19,11 +19,15 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 List<QueryDocumentSnapshot> data=[];
-getData() async{
-  QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection("Categories").get();
-  data.addAll(querySnapshot.docs);
-}
+List<QueryDocumentSnapshot> sub=[];
 class _HomeScreenState extends State<HomeScreen> {
+  getData() async{
+    QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection("Categories").get();
+    data.addAll(querySnapshot.docs);
+    QuerySnapshot query = await FirebaseFirestore.instance.collection("Sub").get();
+    sub.addAll(query.docs);
+    setState((){});
+  }
   @override
   void initState() {
     getData();

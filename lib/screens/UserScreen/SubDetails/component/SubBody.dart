@@ -1,13 +1,11 @@
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../data/models/SubscribeModel.dart';
 import '../../../../utils/Static/Size_Config.dart';
 import '../../../../utils/Widget/Custom_Button.dart';
 import '../../../../utils/Widget/Custom_Container.dart';
 
 class SubBody extends StatelessWidget {
-  final SubscribeModel subscribeModel;
+  final QueryDocumentSnapshot subscribeModel;
   const SubBody({
     super.key,required this.subscribeModel,
   });
@@ -22,13 +20,13 @@ class SubBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "${subscribeModel.name} - ${subscribeModel.price}JOD",
+              "${subscribeModel['Item']} Items - ${subscribeModel['Price']}JOD",
               style: const TextStyle(fontSize: 27),
             ),
             SizedBox(
               height: getProportionateScreenHeight(10),
             ),
-            Text(subscribeModel.desc,
+            Text(subscribeModel['Desc'],
               style: const TextStyle(fontSize: 19, fontFamily: 'reg'),
             ),
             SizedBox(

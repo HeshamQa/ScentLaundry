@@ -1,21 +1,42 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:scentlaundry/data/remote/PopularList.dart';
-
+import 'package:get/get.dart';
 import '../../../../utils/Static/Size_Config.dart';
+import '../../CategoryScreen/CategoryScreen.dart';
 
-class PopularCategories extends StatelessWidget {
+class PopularCategories extends StatefulWidget {
   const PopularCategories({
     super.key,
   });
 
   @override
+  State<PopularCategories> createState() => _PopularCategoriesState();
+}
+List<QueryDocumentSnapshot> pop=[];
+class _PopularCategoriesState extends State<PopularCategories> {
+
+  getData() async{
+    QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection("Categories")
+        .where("popular", isEqualTo: true)
+        .get();
+    pop.addAll(querySnapshot.docs);
+    setState((){});
+  }
+  @override
+  void initState() {
+    getData();
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: getProportionateScreenWidth(25)),
       child: GridView.builder(
-          itemCount: popularList.length,
+          itemCount: pop.length,
           itemBuilder: (context, index) => InkWell(
-            onTap: (){},
+            onTap: (){
+              Get.to(CategoryScreen(data: pop, index: index,));
+            },
             child: Stack(
                   children: [
                     Container(
@@ -26,11 +47,14 @@ class PopularCategories extends StatelessWidget {
                             blurRadius: 10,
                             offset: Offset(0, 4))
                       ]),
-                      child: Image.asset(
-                        popularList[index].image,
-                        width: getProportionateScreenWidth(150),
-                        height: getProportionateScreenHeight(150),
-                        fit: BoxFit.cover,
+                      child: Hero(
+                        tag: pop[index].id,
+                        child: Image.network(
+                          pop[index]['PopImage'],
+                          width: getProportionateScreenWidth(150),
+                          height: getProportionateScreenHeight(150),
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Container(
@@ -39,7 +63,7 @@ class PopularCategories extends StatelessWidget {
                       alignment: Alignment.center,
                       color: Colors.black45,
                       child: Text(
-                        popularList[index].name,
+                        pop[index]['Name'],
                         style: const TextStyle(color: Colors.white, fontSize: 17),
                       ),
                     ),

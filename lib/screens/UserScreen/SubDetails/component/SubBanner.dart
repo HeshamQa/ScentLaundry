@@ -1,11 +1,11 @@
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../data/models/SubscribeModel.dart';
 import '../../../../utils/Static/Size_Config.dart';
 
 class SubBanner extends StatelessWidget {
-  final SubscribeModel subscribeModel;
+  final QueryDocumentSnapshot subscribeModel;
   const SubBanner({
     super.key, required this.subscribeModel,
   });
@@ -13,7 +13,7 @@ class SubBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Hero(
-      tag: subscribeModel.name,
+      tag: subscribeModel['Item'],
       child: Container(
         width: getProportionateScreenWidth(375),
         height: getProportionateScreenHeight(150),
@@ -29,7 +29,7 @@ class SubBanner extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(12),
             child: Image.asset(
-              subscribeModel.image,
+              'assets/images/sub.png',
               fit: BoxFit.fill,
             ),
           ),

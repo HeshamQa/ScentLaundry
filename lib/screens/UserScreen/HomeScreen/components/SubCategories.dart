@@ -1,25 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:scentlaundry/data/remote/SubscribeList.dart';
+import 'package:scentlaundry/screens/UserScreen/HomeScreen/HomeScreen.dart';
 import '../../../../utils/Static/Size_Config.dart';
 import '../../SubDetails/SubDetails.dart';
 
-class SubCategories extends StatelessWidget {
+class SubCategories extends StatefulWidget {
   const SubCategories({
     super.key,
   });
 
   @override
+  State<SubCategories> createState() => _SubCategoriesState();
+}
+
+class _SubCategoriesState extends State<SubCategories> {
+  @override
+  void initState() {
+    setState(() {
+
+    });
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: getProportionateScreenWidth(200),
       child: ListView.builder(
-        itemCount: subscribeList.length,
+        itemCount: sub.length,
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => InkWell(
           onTap: () {
-            Get.to(SubDetails(subscribeModel: subscribeList[index]));
+            Get.to(SubDetails(subscribeModel: sub[index]));
           },
           child: Container(
             width: getProportionateScreenWidth(320),
@@ -42,9 +54,9 @@ class SubCategories extends StatelessWidget {
                       topRight: Radius.circular(15),
                       topLeft: Radius.circular(15)),
                   child: Hero(
-                    tag: subscribeList[index].name,
+                    tag: sub[index]['Item'],
                     child: Image.asset(
-                      subscribeList[index].image,
+                      'assets/images/sub.png',
                       width: getProportionateScreenWidth(320),
                       height: getProportionateScreenHeight(105),
                       fit: BoxFit.cover,
@@ -55,14 +67,14 @@ class SubCategories extends StatelessWidget {
                 SizedBox(
                     width: getProportionateScreenWidth(275),
                     child: Text(
-                      subscribeList[index].name,
+                      '${sub[index]['Item']} Items',
                       style: const TextStyle(fontSize: 22),
                     )),
                 SizedBox(height: getProportionateScreenHeight(5)),
                 SizedBox(
                     width: getProportionateScreenWidth(275),
                     child: Text(
-                      "\$${subscribeList[index].price}JOD",
+                      "\$${sub[index]['Price']}JOD",
                       style: const TextStyle(fontSize: 20, fontFamily: 'Inter'),
                     )),
               ],
