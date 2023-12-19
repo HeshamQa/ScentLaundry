@@ -55,12 +55,8 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Column(
-              children: [
-                BannerImage(),
-                Categories(),
-              ],
-            ),
+            const BannerImage(),
+            const Categories(),
             CustomContainer(
               child: Column(
                 children: [

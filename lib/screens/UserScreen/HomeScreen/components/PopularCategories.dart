@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../../generated/l10n.dart';
 import '../../../../utils/Static/Size_Config.dart';
 import '../../CategoryScreen/CategoryScreen.dart';
 
@@ -39,47 +38,48 @@ class _PopularCategoriesState extends State<PopularCategories> {
       margin: EdgeInsets.only(left: getProportionateScreenWidth(25)),
       child: GridView.builder(
           itemCount: pop.length,
-          itemBuilder: (context, index) => InkWell(
-                onTap: () {
-                  Get.to(CategoryScreen(
-                    data: pop,
-                    index: index,
-                  ));
-                },
-                child: Stack(
-                  children: [
-                    Container(
-                      decoration: const BoxDecoration(boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey,
-                            spreadRadius: 2,
-                            blurRadius: 10,
-                            offset: Offset(0, 4))
-                      ]),
-                      child: Hero(
-                        tag: pop[index].id,
-                        child: Image.network(
-                          pop[index]['PopImage'],
-                          width: getProportionateScreenWidth(150),
-                          height: getProportionateScreenHeight(150),
-                          fit: BoxFit.cover,
-                        ),
+          itemBuilder: (context, index) {
+            return InkWell(
+              onTap: () {
+                Get.to(CategoryScreen(
+                  data: pop,
+                  index: index,
+                ));
+              },
+              child: Stack(
+                children: [
+                  Container(
+                    decoration: const BoxDecoration(boxShadow: [
+                      BoxShadow(
+                          color: Colors.grey,
+                          spreadRadius: 2,
+                          blurRadius: 10,
+                          offset: Offset(0, 4))
+                    ]),
+                    child: Hero(
+                      tag: pop[index].id,
+                      child: Image.network(
+                        pop[index]['PopImage'],
+                        width: getProportionateScreenWidth(150),
+                        height: getProportionateScreenHeight(150),
+                        fit: BoxFit.cover,
                       ),
                     ),
-                    Container(
-                      width: getProportionateScreenWidth(150),
-                      height: getProportionateScreenHeight(150),
-                      alignment: Alignment.center,
-                      color: Colors.black45,
-                      child: Text(
-                        S.of(context).Drying[pop[index]['Name']],
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 17),
-                      ),
+                  ),
+                  Container(
+                    width: getProportionateScreenWidth(150),
+                    height: getProportionateScreenHeight(150),
+                    alignment: Alignment.center,
+                    color: Colors.black45,
+                    child: Text(
+                      pop[index]['Name'],
+                      style: const TextStyle(color: Colors.white, fontSize: 17),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
+            );
+          },
           shrinkWrap: true,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2)),

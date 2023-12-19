@@ -50,15 +50,6 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
-  /// `Drying`
-  String get Drying {
-    return Intl.message(
-      'Drying',
-      name: 'Drying',
-      desc: '',
-      args: [],
-    );
-  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
