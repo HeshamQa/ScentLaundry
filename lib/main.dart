@@ -1,10 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
+import 'package:scentlaundry/generated/l10n.dart';
 import 'package:scentlaundry/screens/UserScreen/HomeScreen/HomeScreen.dart';
 import 'package:scentlaundry/screens/UserScreen/LoginScreen/LoginScreen.dart';
-
 import 'package:scentlaundry/utils/Static/Route.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
 
@@ -24,16 +25,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool isLoggedIn=false;
+  bool isLoggedIn = false;
   @override
   void initState() {
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
       if (user == null) {
-        isLoggedIn=false;
+        isLoggedIn = false;
         print('User is currently signed out!');
       } else {
         print('User is signed in!');
-        isLoggedIn=true;
+        isLoggedIn = true;
       }
     });
     super.initState();
@@ -42,6 +43,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      localizationsDelegates: const [
+        S.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: S.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(

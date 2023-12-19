@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../generated/l10n.dart';
 import '../../../../utils/Static/Size_Config.dart';
 import '../../CategoryScreen/CategoryScreen.dart';
 
@@ -12,21 +13,26 @@ class PopularCategories extends StatefulWidget {
   @override
   State<PopularCategories> createState() => _PopularCategoriesState();
 }
-List<QueryDocumentSnapshot> pop=[];
-class _PopularCategoriesState extends State<PopularCategories> {
 
-  getData() async{
-    QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection("Categories")
+List<QueryDocumentSnapshot> pop = [];
+
+class _PopularCategoriesState extends State<PopularCategories> {
+  getData() async {
+    QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+        .collection("Categories")
         .where("popular", isEqualTo: true)
         .get();
     pop.addAll(querySnapshot.docs);
-    setState((){});
+    setState(() {});
   }
+
   @override
   void initState() {
     getData();
+    setState(() {});
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,10 +40,13 @@ class _PopularCategoriesState extends State<PopularCategories> {
       child: GridView.builder(
           itemCount: pop.length,
           itemBuilder: (context, index) => InkWell(
-            onTap: (){
-              Get.to(CategoryScreen(data: pop, index: index,));
-            },
-            child: Stack(
+                onTap: () {
+                  Get.to(CategoryScreen(
+                    data: pop,
+                    index: index,
+                  ));
+                },
+                child: Stack(
                   children: [
                     Container(
                       decoration: const BoxDecoration(boxShadow: [
@@ -63,13 +72,14 @@ class _PopularCategoriesState extends State<PopularCategories> {
                       alignment: Alignment.center,
                       color: Colors.black45,
                       child: Text(
-                        pop[index]['Name'],
-                        style: const TextStyle(color: Colors.white, fontSize: 17),
+                        S.of(context).Drying[pop[index]['Name']],
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 17),
                       ),
                     ),
                   ],
                 ),
-          ),
+              ),
           shrinkWrap: true,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2)),
