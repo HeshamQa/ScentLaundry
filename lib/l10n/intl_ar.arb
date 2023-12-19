@@ -1,0 +1,12 @@
+{
+    "categories": {
+        "Drying": "غسيل",
+        "Carpet": "سجاد",
+        "Car": "سيارة",
+        "Quilt": "الحفه",
+        "Sewing": "خياطة",
+        "Ironing": "كوي",
+        "Washing & Ironing": "غسيل و كوي",
+        "Bag": "شنط"
+    }
+}

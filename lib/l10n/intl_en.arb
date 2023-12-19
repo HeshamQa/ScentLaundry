@@ -1,0 +1,12 @@
+{
+    "categories": {
+        "Drying": "Drying",
+        "Carpet": "Carpet",
+        "Car": "Car",
+        "Quilt": "Quilt",
+        "Sewing": "Sewing",
+        "Ironing": "Ironing",
+        "Washing & Ironing": "Washing & Ironing",
+        "Bag": "Bag"
+    }
+}
