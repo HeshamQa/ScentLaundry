@@ -51,7 +51,7 @@ class _MyAppState extends State<MyApp> {
       ],
       supportedLocales: S.delegate.supportedLocales,
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Scent Laundry',
       theme: ThemeData(
         appBarTheme: AppBarTheme(
           backgroundColor: StaticColors.primaryColor,
