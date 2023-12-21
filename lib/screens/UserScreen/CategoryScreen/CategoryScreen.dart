@@ -3,9 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
+import 'package:scentlaundry/utils/Static/locale_config.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Container.dart';
-
-import 'components/AddToCartButton.dart';
 import 'components/Banner.dart';
 import 'components/CustomItems.dart';
 
@@ -36,7 +35,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
     SizeConfig().init(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.data[widget.index]['Name']),
+        title: Text(LocaleConfig.getCategoryAtIndex(widget.data[widget.index]['Name'], context) ),
           actions: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart))
           ],
@@ -47,12 +46,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
           Baner(data: widget.data, index: widget.index,),
           Expanded(
             child: CustomContainer(
-                child: Stack(
-                  children: [
-                    CustomItems(data: subCate,),
-                    const AddToCartButton(),
-                  ],
-                ),
+                child: CustomItems(data: subCate,cateName:widget.data[widget.index]['Name'])
             ),
           ),
         ],

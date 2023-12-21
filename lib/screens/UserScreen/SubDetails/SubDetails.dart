@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import '../../../generated/l10n.dart';
 import '../../../utils/Static/StaticColors.dart';
 import 'component/SubBanner.dart';
 import 'component/SubBody.dart';
@@ -12,7 +13,7 @@ class SubDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('${subscribeModel['Item']} Items'),
+        title: Text('${subscribeModel['Item']} ${S.of(context).Items}'),
       ),
       backgroundColor: StaticColors.primaryColor,
       body: Column(children: [

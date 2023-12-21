@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import '../../../../generated/l10n.dart';
 import '../../../../utils/Static/Size_Config.dart';
 import '../../../../utils/Widget/Custom_Button.dart';
 import '../../../../utils/Widget/Custom_Container.dart';
@@ -20,28 +21,27 @@ class SubBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "${subscribeModel['Item']} Items - ${subscribeModel['Price']}JOD",
+              "${subscribeModel['Item']} ${S.of(context).Items} - ${subscribeModel['Price']}${S.of(context).JOD}",
               style: const TextStyle(fontSize: 27),
             ),
             SizedBox(
               height: getProportionateScreenHeight(10),
             ),
-            Text(subscribeModel['Desc'],
+            Text("${S.of(context).Thesubscription} ${subscribeModel['Item']} ${S.of(context).piecesof} ${subscribeModel['Price']} ${S.of(context).JOD}.",
               style: const TextStyle(fontSize: 19, fontFamily: 'reg'),
             ),
             SizedBox(
               height: getProportionateScreenHeight(10),
             ),
-            const Text(
-              "If you want to subscribe Press "
-                  "the button below",
-              style: TextStyle(fontSize: 20, fontFamily: 'inter'),
+            Text(
+              S.of(context).Ifyouwantto,
+              style: const TextStyle(fontSize: 20, fontFamily: 'inter'),
             ),
             const Spacer(),
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(10.0)),
-              child: CustomButton(press: () {}, title: "Subscribe"),
+              child: CustomButton(press: () {}, title: S.of(context).Subscribe),
             ),
           ],
         ),

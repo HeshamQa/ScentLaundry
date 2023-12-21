@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:scentlaundry/utils/Static/locale_config.dart';
 import '../../../../utils/Static/Size_Config.dart';
 import '../../CategoryScreen/CategoryScreen.dart';
 
@@ -35,7 +36,7 @@ class _PopularCategoriesState extends State<PopularCategories> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(left: getProportionateScreenWidth(25)),
+      margin: LocaleConfig().isAr?EdgeInsets.only(left: getProportionateScreenWidth(25)):EdgeInsets.only(right: getProportionateScreenWidth(25)),
       child: GridView.builder(
           itemCount: pop.length,
           itemBuilder: (context, index) {
@@ -72,7 +73,7 @@ class _PopularCategoriesState extends State<PopularCategories> {
                     alignment: Alignment.center,
                     color: Colors.black45,
                     child: Text(
-                      pop[index]['Name'],
+                      LocaleConfig.getCategoryAtIndex(pop[index]['Name'],context),
                       style: const TextStyle(color: Colors.white, fontSize: 17),
                     ),
                   ),

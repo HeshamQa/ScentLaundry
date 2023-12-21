@@ -22,6 +22,50 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "Drying": MessageLookupByLibrary.simpleMessage("Drying")
+        "Bag": MessageLookupByLibrary.simpleMessage("Bag"),
+        "Car": MessageLookupByLibrary.simpleMessage("Car"),
+        "Carpet": MessageLookupByLibrary.simpleMessage("Carpet"),
+        "Contactus": MessageLookupByLibrary.simpleMessage("Contact us"),
+        "CreateNow": MessageLookupByLibrary.simpleMessage("Create Now"),
+        "Donthaveanaccount":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account? "),
+        "Doyouhaveanaccount":
+            MessageLookupByLibrary.simpleMessage("Do you have an account? "),
+        "Drying": MessageLookupByLibrary.simpleMessage("Drying"),
+        "Email": MessageLookupByLibrary.simpleMessage("Email"),
+        "EnterEmail": MessageLookupByLibrary.simpleMessage("Enter Email"),
+        "ForgetPassword":
+            MessageLookupByLibrary.simpleMessage("Forget Password"),
+        "Forgot": MessageLookupByLibrary.simpleMessage("Forgot?"),
+        "Ifyouwantto": MessageLookupByLibrary.simpleMessage(
+            "If you want to subscribe Press the button below"),
+        "Ironing": MessageLookupByLibrary.simpleMessage("Ironing"),
+        "Items": MessageLookupByLibrary.simpleMessage("Items"),
+        "JOD": MessageLookupByLibrary.simpleMessage("JOD"),
+        "LogIn": MessageLookupByLibrary.simpleMessage("Log In"),
+        "Logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "MostPopular": MessageLookupByLibrary.simpleMessage("Most Popular"),
+        "MySubscription":
+            MessageLookupByLibrary.simpleMessage("MySubscription"),
+        "Next": MessageLookupByLibrary.simpleMessage("Next"),
+        "OrContinuewith":
+            MessageLookupByLibrary.simpleMessage("Or Continue with"),
+        "Orders": MessageLookupByLibrary.simpleMessage("Orders"),
+        "Password": MessageLookupByLibrary.simpleMessage("Password"),
+        "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "Quilt": MessageLookupByLibrary.simpleMessage("Quilt"),
+        "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
+        "Sewing": MessageLookupByLibrary.simpleMessage("Sewing"),
+        "SignUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "Subscribe": MessageLookupByLibrary.simpleMessage("Subscribe"),
+        "Subscriptions": MessageLookupByLibrary.simpleMessage("Subscriptions"),
+        "Thesubscription": MessageLookupByLibrary.simpleMessage(
+            "The subscription containing "),
+        "UserName": MessageLookupByLibrary.simpleMessage("User Name"),
+        "Wallet": MessageLookupByLibrary.simpleMessage("Wallet"),
+        "WashingIroning":
+            MessageLookupByLibrary.simpleMessage("Washing & Ironing"),
+        "piecesof": MessageLookupByLibrary.simpleMessage(
+            " pieces of (T-Shirt, Pants, Short, underwear, Sucks, shoes) for only ")
       };
 }

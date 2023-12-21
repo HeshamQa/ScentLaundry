@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:scentlaundry/screens/UserScreen/CartScreen/components/CartItems.dart';
 import '../../../../utils/Static/Route.dart';
 import '../../../../utils/Widget/Custom_Button.dart';
 import '../../../../utils/Widget/Custom_Container.dart';
@@ -34,7 +35,8 @@ class BottomContainer extends StatelessWidget {
                     Text("11.50 JOD",style: TextStyle(fontSize: 22),)
                   ],
                 ),
-                CustomButton(press: (){Get.toNamed(Approute.PlaceOrder);}, title: "Place Order")
+                CustomButton(press: (){
+                  Get.toNamed(Approute.PlaceOrder);}, title: "Place Order")
               ],
             ),
           )

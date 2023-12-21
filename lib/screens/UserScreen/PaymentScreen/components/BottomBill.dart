@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
-
 import '../../../../utils/Static/Size_Config.dart';
 import '../../../../utils/Widget/Custom_Button.dart';
 import '../../../../utils/Widget/Custom_Container.dart';

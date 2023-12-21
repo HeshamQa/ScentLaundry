@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../generated/l10n.dart';
 import '../../../utils/Static/Route.dart';
 import '../../../utils/Static/Size_Config.dart';
 import '../../../utils/Widget/BackGround.dart';
@@ -37,7 +38,7 @@ class SignUpScreen extends StatelessWidget {
           children: [
             BackGround(
                 height: getProportionateScreenHeight(290),
-                title: "Sign Up",
+                title: S.of(context).SignUp,
                 h: 115),
             SizedBox(height: getProportionateScreenHeight(15)),
             Padding(
@@ -52,30 +53,30 @@ class SignUpScreen extends StatelessWidget {
                     TextForm(
                       textEditingController: userNameEditingController,
                       obscure: false,
-                      hint: "User Name",
+                      hint: S.of(context).UserName,
                       enabled: true,
                     ),
                     TextForm(
                       textEditingController: emailTextEditingController,
                       obscure: false,
-                      hint: "Email",
+                      hint: S.of(context).Email,
                       enabled: true,
                     ),
                     TextForm(
                       textEditingController: passwordTextEditingController,
                       obscure: true,
-                      hint: "Password",
+                      hint: S.of(context).Password,
                       enabled: true,
                     ),
                     TextForm(
                       textEditingController:
                           confirmPasswordTextEditingController,
                       obscure: true,
-                      hint: "Reset Password",
+                      hint: S.of(context).ResetPassword,
                       enabled: true,
                     ),
                     CustomButton(
-                      title: 'Sign Up',
+                      title: S.of(context).SignUp,
                       press: () async {
                         try {
                           final credential = await FirebaseAuth.instance
@@ -96,14 +97,12 @@ class SignUpScreen extends StatelessWidget {
                         }
                       },
                     ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Or Continue with",
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ],
+                    Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        S.of(context).OrContinuewith,
+                        style: TextStyle(color: Colors.grey),
+                      ),
                     ),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,

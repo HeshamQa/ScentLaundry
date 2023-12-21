@@ -21,5 +21,49 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "Bag": MessageLookupByLibrary.simpleMessage("شنط"),
+        "Car": MessageLookupByLibrary.simpleMessage("سيارة"),
+        "Carpet": MessageLookupByLibrary.simpleMessage("سجاد"),
+        "Contactus": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
+        "CreateNow": MessageLookupByLibrary.simpleMessage("انشئ الآن"),
+        "Donthaveanaccount":
+            MessageLookupByLibrary.simpleMessage("لا تمتلك حسابا ؟ "),
+        "Doyouhaveanaccount":
+            MessageLookupByLibrary.simpleMessage("هل لديك حساب ؟ "),
+        "Drying": MessageLookupByLibrary.simpleMessage("غسيل"),
+        "Email": MessageLookupByLibrary.simpleMessage("ايميل"),
+        "EnterEmail": MessageLookupByLibrary.simpleMessage("ادخل الايميل"),
+        "ForgetPassword":
+            MessageLookupByLibrary.simpleMessage("نسيت كلمة السر"),
+        "Forgot": MessageLookupByLibrary.simpleMessage("نسيت كلمة السر؟"),
+        "Ifyouwantto": MessageLookupByLibrary.simpleMessage(
+            "اذا كنت تريد الاشتراك اضغط على زر الاشتراك في الاسفل"),
+        "Ironing": MessageLookupByLibrary.simpleMessage("كوي"),
+        "Items": MessageLookupByLibrary.simpleMessage("قطعة"),
+        "JOD": MessageLookupByLibrary.simpleMessage("د.أ"),
+        "LogIn": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+        "Logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+        "MostPopular": MessageLookupByLibrary.simpleMessage("الاكثر رواجا"),
+        "MySubscription": MessageLookupByLibrary.simpleMessage("اشتراكاتي"),
+        "Next": MessageLookupByLibrary.simpleMessage("التالي"),
+        "OrContinuewith": MessageLookupByLibrary.simpleMessage("او"),
+        "Orders": MessageLookupByLibrary.simpleMessage("الطلبات"),
+        "Password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
+        "Profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+        "Quilt": MessageLookupByLibrary.simpleMessage("الحفه"),
+        "ResetPassword":
+            MessageLookupByLibrary.simpleMessage("اعادة كلمة السر"),
+        "Sewing": MessageLookupByLibrary.simpleMessage("خياطة"),
+        "SignUp": MessageLookupByLibrary.simpleMessage("انشئ حساب"),
+        "Subscribe": MessageLookupByLibrary.simpleMessage("اشترك"),
+        "Subscriptions": MessageLookupByLibrary.simpleMessage("الاشتراكات"),
+        "Thesubscription":
+            MessageLookupByLibrary.simpleMessage("الاشتراك يحتوي على"),
+        "UserName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
+        "Wallet": MessageLookupByLibrary.simpleMessage("المحفظة"),
+        "WashingIroning": MessageLookupByLibrary.simpleMessage("غسيل و كوي"),
+        "piecesof": MessageLookupByLibrary.simpleMessage(
+            "قطعة من (تي شيرت, بنطال, شورت, ملابس داخلية, جوارب, احذية) فقط بـ")
+      };
 }

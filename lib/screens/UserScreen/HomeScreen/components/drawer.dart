@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
+import '../../../../generated/l10n.dart';
 import '../../../../utils/Static/Size_Config.dart';
 import 'drawer_elements.dart';
 
@@ -21,14 +22,14 @@ class CustomDrawer extends StatelessWidget {
           ),
           DrawerElements(
             icon: Icons.person_2_outlined,
-            text: "Profile",
+            text: S.of(context).Profile,
             ontap: () {
               Get.toNamed(Approute.ProfileScreen);
             },
           ),
           DrawerElements(
             icon: Icons.request_page_outlined,
-            text: "Orders",
+            text: S.of(context).Orders,
             ontap: () {
               Get.toNamed(Approute.MyOrder);
             },
@@ -38,17 +39,17 @@ class CustomDrawer extends StatelessWidget {
                 Get.toNamed(Approute.ContactUs);
               },
               icon: Icons.chat_bubble_outline,
-              text: "Contact us"),
+              text: S.of(context).Contactus),
           DrawerElements(
             icon: Icons.wallet_outlined,
-            text: "Wallet",
+            text: S.of(context).Wallet,
             ontap: () {
               Get.toNamed(Approute.WalletScreen);
             },
           ),
           DrawerElements(
             icon: Icons.subscriptions_outlined,
-            text: "MySubscription",
+            text: S.of(context).MySubscription,
             ontap: () {
               Get.toNamed(Approute.Subscriptions);
             },
@@ -56,7 +57,7 @@ class CustomDrawer extends StatelessWidget {
           const Spacer(),
           DrawerElements(
             icon: Icons.logout_outlined,
-            text: "Logout",
+            text: S.of(context).Logout,
             ontap: () async {
               await FirebaseAuth.instance.signOut();
               Get.offAllNamed(Approute.Login);

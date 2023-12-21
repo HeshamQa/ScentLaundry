@@ -4,7 +4,6 @@ import 'package:scentlaundry/utils/Static/StaticColors.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Container.dart';
 import 'package:scentlaundry/utils/Widget/SmallButton.dart';
 import 'package:scentlaundry/utils/Widget/TextForm.dart';
-
 import '../../../utils/Static/Size_Config.dart';
 
 class ChangePasswordScreen extends StatelessWidget {

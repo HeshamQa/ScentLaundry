@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Container.dart';
+import '../../../generated/l10n.dart';
 import '../../../utils/Static/Size_Config.dart';
 import '../../../utils/Static/StaticColors.dart';
 import 'components/BannerImage.dart';
@@ -18,22 +19,7 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
-List<QueryDocumentSnapshot> data=[];
-List<QueryDocumentSnapshot> sub=[];
 class _HomeScreenState extends State<HomeScreen> {
-  getData() async{
-    QuerySnapshot querySnapshot = await FirebaseFirestore.instance.collection("Categories").get();
-    data.addAll(querySnapshot.docs);
-    QuerySnapshot query = await FirebaseFirestore.instance.collection("Sub").get();
-    sub.addAll(query.docs);
-    setState((){});
-  }
-  @override
-  void initState() {
-    getData();
-    setState(() {});
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -60,10 +46,10 @@ class _HomeScreenState extends State<HomeScreen> {
             CustomContainer(
               child: Column(
                 children: [
-                  const HeaderText(text: "Most Popular"),
+                  HeaderText(text: S.of(context).MostPopular),
                   SizedBox(height: getProportionateScreenHeight(10)),
                   const PopularCategories(),
-                  const HeaderText(text: "Subscriptions"),
+                  HeaderText(text: S.of(context).Subscriptions),
                   SizedBox(height: getProportionateScreenHeight(10)),
                   const SubCategories(),
                 ],

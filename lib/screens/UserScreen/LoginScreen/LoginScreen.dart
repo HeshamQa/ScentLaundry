@@ -1,8 +1,7 @@
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:scentlaundry/utils/Static/StaticColors.dart';
+import '../../../generated/l10n.dart';
 import '../../../utils/Static/Route.dart';
 import '../../../utils/Static/Size_Config.dart';
 import '../../../utils/Widget/BackGround.dart';
@@ -32,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             BackGround(
               height: getProportionateScreenHeight(315),
-              title: "LogIn",
+              title: S.of(context).LogIn,
               h: 150,
             ),
             SizedBox(
@@ -50,13 +49,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextForm(
                       textEditingController: emailEditingController,
                       obscure: false,
-                      hint: "Email",
+                      hint: S.of(context).Email,
                       enabled: true,
                     ),
                     TextForm(
                       textEditingController: passwordEditingController,
                       obscure: true,
-                      hint: "Password",
+                      hint: S.of(context).Password,
                       enabled: true,
                     ),
                     InkWell(
@@ -67,7 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         );
                       },
                       child:
-                          const Text("Forgot?", style: TextStyle(fontSize: 18)),
+                          Text(S.of(context).Forgot, style: const TextStyle(fontSize: 18)),
                     ),
                     CustomButton(
                       press: () async {
@@ -80,42 +79,18 @@ class _LoginScreenState extends State<LoginScreen> {
                           Get.offAllNamed(Approute.HomeScreen);
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'user-not-found') {
-                            return AwesomeDialog(
-                                context: context,
-                                dialogType: DialogType.error,
-                                animType: AnimType.rightSlide,
-                                title: 'User Not Found',
-                                desc: '',
-                                btnCancelOnPress: () {},
-                        btnOkOnPress: () {},
-                              btnCancelColor: Colors.grey,
-                              btnOkColor: StaticColors.primaryColor
-                        ).show();
                           } else if (e.code == 'wrong-password') {
-                            return AwesomeDialog(
-                                context: context,
-                                dialogType: DialogType.error,
-                                animType: AnimType.rightSlide,
-                                title: 'User Not Found',
-                                desc: '',
-                                btnCancelOnPress: () {},
-                                btnOkOnPress: () {},
-                                btnCancelColor: Colors.grey,
-                                btnOkColor: StaticColors.primaryColor
-                            ).show();
                           }
                         }
                       },
-                      title: 'Log In',
+                      title: S.of(context).LogIn,
                     ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Or Continue with",
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ],
+                    Align(
+                      alignment: Alignment.center,
+                      child: Text(
+                        S.of(context).OrContinuewith,
+                        style: const TextStyle(color: Colors.grey),
+                      ),
                     ),
                     const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,

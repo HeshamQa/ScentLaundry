@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../../../generated/l10n.dart';
 import '../../../../utils/Static/StaticColors.dart';
 
 class LogInButton extends StatelessWidget {
@@ -12,9 +13,9 @@ class LogInButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text(
-          "Do you have an account? ",
-          style: TextStyle(
+        Text(
+          S.of(context).Doyouhaveanaccount,
+          style: const TextStyle(
               fontSize: 15,
               color: Colors.grey,
               fontFamily: "Inter"),
@@ -24,7 +25,7 @@ class LogInButton extends StatelessWidget {
               Get.back();
             },
             child: Text(
-              "Login",
+              S.of(context).LogIn,
               style: TextStyle(
                   color: StaticColors.black, fontSize: 15),
             )),

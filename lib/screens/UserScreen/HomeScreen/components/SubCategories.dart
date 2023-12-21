@@ -1,6 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:scentlaundry/screens/UserScreen/HomeScreen/HomeScreen.dart';
+import '../../../../generated/l10n.dart';
 import '../../../../utils/Static/Size_Config.dart';
 import '../../SubDetails/SubDetails.dart';
 
@@ -14,12 +15,17 @@ class SubCategories extends StatefulWidget {
 }
 
 class _SubCategoriesState extends State<SubCategories> {
+  List<QueryDocumentSnapshot> sub=[];
+  getData() async {
+    QuerySnapshot query = await FirebaseFirestore.instance.collection("Sub").get();
+    sub.addAll(query.docs);
+    setState((){});
+  }
   @override
-  void initState() {
-    setState(() {
-
-    });
+  initState() {
     super.initState();
+    getData();
+    setState(() {});
   }
   @override
   Widget build(BuildContext context) {
@@ -67,14 +73,14 @@ class _SubCategoriesState extends State<SubCategories> {
                 SizedBox(
                     width: getProportionateScreenWidth(275),
                     child: Text(
-                      '${sub[index]['Item']} Items',
+                      '${sub[index]['Item']} ${S.of(context).Items}',
                       style: const TextStyle(fontSize: 22),
                     )),
                 SizedBox(height: getProportionateScreenHeight(5)),
                 SizedBox(
                     width: getProportionateScreenWidth(275),
                     child: Text(
-                      "\$${sub[index]['Price']}JOD",
+                      "${sub[index]['Price']}${S.of(context).JOD}",
                       style: const TextStyle(fontSize: 20, fontFamily: 'Inter'),
                     )),
               ],

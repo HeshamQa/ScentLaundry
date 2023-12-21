@@ -50,6 +50,365 @@ class S {
     return Localizations.of<S>(context, S);
   }
 
+  /// `Drying`
+  String get Drying {
+    return Intl.message(
+      'Drying',
+      name: 'Drying',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Carpet`
+  String get Carpet {
+    return Intl.message(
+      'Carpet',
+      name: 'Carpet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Car`
+  String get Car {
+    return Intl.message(
+      'Car',
+      name: 'Car',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quilt`
+  String get Quilt {
+    return Intl.message(
+      'Quilt',
+      name: 'Quilt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sewing`
+  String get Sewing {
+    return Intl.message(
+      'Sewing',
+      name: 'Sewing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ironing`
+  String get Ironing {
+    return Intl.message(
+      'Ironing',
+      name: 'Ironing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Washing & Ironing`
+  String get WashingIroning {
+    return Intl.message(
+      'Washing & Ironing',
+      name: 'WashingIroning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bag`
+  String get Bag {
+    return Intl.message(
+      'Bag',
+      name: 'Bag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Most Popular`
+  String get MostPopular {
+    return Intl.message(
+      'Most Popular',
+      name: 'MostPopular',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subscriptions`
+  String get Subscriptions {
+    return Intl.message(
+      'Subscriptions',
+      name: 'Subscriptions',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get Profile {
+    return Intl.message(
+      'Profile',
+      name: 'Profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Orders`
+  String get Orders {
+    return Intl.message(
+      'Orders',
+      name: 'Orders',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact us`
+  String get Contactus {
+    return Intl.message(
+      'Contact us',
+      name: 'Contactus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wallet`
+  String get Wallet {
+    return Intl.message(
+      'Wallet',
+      name: 'Wallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MySubscription`
+  String get MySubscription {
+    return Intl.message(
+      'MySubscription',
+      name: 'MySubscription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get Logout {
+    return Intl.message(
+      'Logout',
+      name: 'Logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Items`
+  String get Items {
+    return Intl.message(
+      'Items',
+      name: 'Items',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `JOD`
+  String get JOD {
+    return Intl.message(
+      'JOD',
+      name: 'JOD',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get Email {
+    return Intl.message(
+      'Email',
+      name: 'Email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get Password {
+    return Intl.message(
+      'Password',
+      name: 'Password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forgot?`
+  String get Forgot {
+    return Intl.message(
+      'Forgot?',
+      name: 'Forgot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Log In`
+  String get LogIn {
+    return Intl.message(
+      'Log In',
+      name: 'LogIn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or Continue with`
+  String get OrContinuewith {
+    return Intl.message(
+      'Or Continue with',
+      name: 'OrContinuewith',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account? `
+  String get Donthaveanaccount {
+    return Intl.message(
+      'Don\'t have an account? ',
+      name: 'Donthaveanaccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Now`
+  String get CreateNow {
+    return Intl.message(
+      'Create Now',
+      name: 'CreateNow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Forget Password`
+  String get ForgetPassword {
+    return Intl.message(
+      'Forget Password',
+      name: 'ForgetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter Email`
+  String get EnterEmail {
+    return Intl.message(
+      'Enter Email',
+      name: 'EnterEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get Next {
+    return Intl.message(
+      'Next',
+      name: 'Next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign Up`
+  String get SignUp {
+    return Intl.message(
+      'Sign Up',
+      name: 'SignUp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User Name`
+  String get UserName {
+    return Intl.message(
+      'User Name',
+      name: 'UserName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset Password`
+  String get ResetPassword {
+    return Intl.message(
+      'Reset Password',
+      name: 'ResetPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Do you have an account? `
+  String get Doyouhaveanaccount {
+    return Intl.message(
+      'Do you have an account? ',
+      name: 'Doyouhaveanaccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you want to subscribe Press the button below`
+  String get Ifyouwantto {
+    return Intl.message(
+      'If you want to subscribe Press the button below',
+      name: 'Ifyouwantto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Subscribe`
+  String get Subscribe {
+    return Intl.message(
+      'Subscribe',
+      name: 'Subscribe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The subscription containing `
+  String get Thesubscription {
+    return Intl.message(
+      'The subscription containing ',
+      name: 'Thesubscription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// ` pieces of (T-Shirt, Pants, Short, underwear, Sucks, shoes) for only `
+  String get piecesof {
+    return Intl.message(
+      ' pieces of (T-Shirt, Pants, Short, underwear, Sucks, shoes) for only ',
+      name: 'piecesof',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
