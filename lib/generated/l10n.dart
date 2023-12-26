@@ -230,11 +230,11 @@ class S {
     );
   }
 
-  /// `Email`
-  String get Email {
+  /// `Phone`
+  String get Phone {
     return Intl.message(
-      'Email',
-      name: 'Email',
+      'Phone',
+      name: 'Phone',
       desc: '',
       args: [],
     );

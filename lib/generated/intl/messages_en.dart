@@ -32,7 +32,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "Doyouhaveanaccount":
             MessageLookupByLibrary.simpleMessage("Do you have an account? "),
         "Drying": MessageLookupByLibrary.simpleMessage("Drying"),
-        "Email": MessageLookupByLibrary.simpleMessage("Email"),
         "EnterEmail": MessageLookupByLibrary.simpleMessage("Enter Email"),
         "ForgetPassword":
             MessageLookupByLibrary.simpleMessage("Forget Password"),
@@ -52,6 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Or Continue with"),
         "Orders": MessageLookupByLibrary.simpleMessage("Orders"),
         "Password": MessageLookupByLibrary.simpleMessage("Password"),
+        "Phone": MessageLookupByLibrary.simpleMessage("Phone"),
         "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "Quilt": MessageLookupByLibrary.simpleMessage("Quilt"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),

@@ -46,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     TextForm(
                       textEditingController: phoneEditingController,
                       obscure: false,
-                      hint: S.of(context).Email,
+                      hint: S.of(context).Phone,
                       enabled: true,
                     ),
                     TextForm(

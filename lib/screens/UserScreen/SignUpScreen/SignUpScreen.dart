@@ -44,7 +44,7 @@ class SignUpScreen extends StatelessWidget {
                     TextForm(
                       textEditingController: phoneTextEditingController,
                       obscure: false,
-                      hint: S.of(context).Email,
+                      hint: S.of(context).Phone,
                       enabled: true,
                     ),
                     TextForm(
