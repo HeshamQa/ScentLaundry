@@ -1,9 +1,10 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
+import 'package:scentlaundry/utils/Static/consvalue.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../utils/Static/Size_Config.dart';
+import '../../../../utils/Static/sharedpref.dart';
 import 'drawer_elements.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -59,7 +60,11 @@ class CustomDrawer extends StatelessWidget {
             icon: Icons.logout_outlined,
             text: S.of(context).Logout,
             ontap: () async {
-              await FirebaseAuth.instance.signOut();
+              General.remove(ConsValues.id);
+              General.remove(ConsValues.NAME);
+              General.remove(ConsValues.PHONE);
+              General.remove(ConsValues.USER_TYPE);
+              ConsValues.isLoggedIn=false;
               Get.offAllNamed(Approute.Login);
             },
           ),

@@ -1,12 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../utils/Static/Size_Config.dart';
 
 class Baner extends StatelessWidget {
-  final List<QueryDocumentSnapshot> data;
-  final int index;
-  const Baner({super.key, required this.data, required this.index});
+  const Baner({super.key,});
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +21,10 @@ class Baner extends StatelessWidget {
       ),
       child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
-          child: Hero(
-              tag: data[index].id,
-              child: Image.network(data[index]['PopImage'], fit: BoxFit.fill))),
+          // child: Hero(
+          //     // tag: data[index].id,
+          //     child: Image.network(data[index]['PopImage'], fit: BoxFit.fill))
+    ),
     );
   }
 }

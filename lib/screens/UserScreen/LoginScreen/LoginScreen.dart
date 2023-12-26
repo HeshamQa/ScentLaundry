@@ -1,12 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:scentlaundry/controller/auth/logincontroller.dart';
 import '../../../generated/l10n.dart';
-import '../../../utils/Static/Route.dart';
 import '../../../utils/Static/Size_Config.dart';
 import '../../../utils/Widget/BackGround.dart';
 import '../../../utils/Widget/Custom_Button.dart';
-import '../../../utils/Widget/Social_Button.dart';
 import '../../../utils/Widget/TextForm.dart';
 import '../ForgetPassword/ForgetPassword.dart';
 import 'Components/SignUpButton.dart';
@@ -19,7 +16,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  TextEditingController emailEditingController = TextEditingController();
+  TextEditingController phoneEditingController = TextEditingController();
   TextEditingController passwordEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -47,7 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     TextForm(
-                      textEditingController: emailEditingController,
+                      textEditingController: phoneEditingController,
                       obscure: false,
                       hint: S.of(context).Email,
                       enabled: true,
@@ -70,39 +67,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     CustomButton(
                       press: () async {
-                        try {
-                          final credential = await FirebaseAuth.instance
-                              .signInWithEmailAndPassword(
-                            email: emailEditingController.text,
-                            password: passwordEditingController.text,
-                          );
-                          Get.offAllNamed(Approute.HomeScreen);
-                        } on FirebaseAuthException catch (e) {
-                          if (e.code == 'user-not-found') {
-                          } else if (e.code == 'wrong-password') {
-                          }
-                        }
+                        login(context, phoneEditingController, passwordEditingController);
                       },
                       title: S.of(context).LogIn,
-                    ),
-                    Align(
-                      alignment: Alignment.center,
-                      child: Text(
-                        S.of(context).OrContinuewith,
-                        style: const TextStyle(color: Colors.grey),
-                      ),
-                    ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        SocialButton(
-                            title: "Google",
-                            image: "assets/icons/google-icon.svg"),
-                        SocialButton(
-                          title: "Facebook",
-                          image: "assets/icons/facebook-2.svg",
-                        )
-                      ],
                     ),
                     const SignUpButton(),
                   ],

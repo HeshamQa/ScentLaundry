@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../../generated/l10n.dart';
 import '../../../utils/Static/StaticColors.dart';
@@ -6,20 +5,19 @@ import 'component/SubBanner.dart';
 import 'component/SubBody.dart';
 
 class SubDetails extends StatelessWidget {
-  final QueryDocumentSnapshot subscribeModel;
-  const SubDetails({super.key, required this.subscribeModel});
+  const SubDetails({super.key,});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('${subscribeModel['Item']} ${S.of(context).Items}'),
+        title: Text("subscribeModel['Item']} ${S.of(context).Items}"),
       ),
       backgroundColor: StaticColors.primaryColor,
       body: Column(children: [
-        SubBanner(subscribeModel:subscribeModel,),
+        SubBanner(),
         Expanded(
-          child: SubBody(subscribeModel: subscribeModel,),
+          child: SubBody(),
         ),
       ]),
     );

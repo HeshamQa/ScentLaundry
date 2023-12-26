@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../utils/Static/Size_Config.dart';
@@ -6,10 +5,7 @@ import '../../../../utils/Widget/Custom_Button.dart';
 import '../../../../utils/Widget/Custom_Container.dart';
 
 class SubBody extends StatelessWidget {
-  final QueryDocumentSnapshot subscribeModel;
-  const SubBody({
-    super.key,required this.subscribeModel,
-  });
+  const SubBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +17,13 @@ class SubBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "${subscribeModel['Item']} ${S.of(context).Items} - ${subscribeModel['Price']}${S.of(context).JOD}",
+              "subscribeModel['Item']} ${S.of(context).Items} - subscribeModel['Price']}${S.of(context).JOD}",
               style: const TextStyle(fontSize: 27),
             ),
             SizedBox(
               height: getProportionateScreenHeight(10),
             ),
-            Text("${S.of(context).Thesubscription} ${subscribeModel['Item']} ${S.of(context).piecesof} ${subscribeModel['Price']} ${S.of(context).JOD}.",
+            Text("${S.of(context).Thesubscription} subscribeModel['Item']} ${S.of(context).piecesof} subscribeModel['Price']} ${S.of(context).JOD}.",
               style: const TextStyle(fontSize: 19, fontFamily: 'reg'),
             ),
             SizedBox(
