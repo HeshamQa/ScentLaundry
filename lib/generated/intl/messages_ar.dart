@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Carpet": MessageLookupByLibrary.simpleMessage("سجاد"),
         "Contactus": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
         "CreateNow": MessageLookupByLibrary.simpleMessage("انشئ الآن"),
+        "DeliveryPrice": MessageLookupByLibrary.simpleMessage("سعر التوصيل"),
         "Donthaveanaccount":
             MessageLookupByLibrary.simpleMessage("لا تمتلك حسابا ؟ "),
         "Doyouhaveanaccount":
@@ -54,12 +55,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "Quilt": MessageLookupByLibrary.simpleMessage("الحفه"),
         "ResetPassword":
             MessageLookupByLibrary.simpleMessage("اعادة كلمة السر"),
+        "ServicePrice": MessageLookupByLibrary.simpleMessage("سعر الخدمة"),
         "Sewing": MessageLookupByLibrary.simpleMessage("خياطة"),
         "SignUp": MessageLookupByLibrary.simpleMessage("انشئ حساب"),
         "Subscribe": MessageLookupByLibrary.simpleMessage("اشترك"),
         "Subscriptions": MessageLookupByLibrary.simpleMessage("الاشتراكات"),
         "Thesubscription":
             MessageLookupByLibrary.simpleMessage("الاشتراك يحتوي على"),
+        "TotalPrice": MessageLookupByLibrary.simpleMessage("المجموع"),
         "UserName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "Wallet": MessageLookupByLibrary.simpleMessage("المحفظة"),
         "WashingIroning": MessageLookupByLibrary.simpleMessage("غسيل و كوي"),

@@ -27,6 +27,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "Carpet": MessageLookupByLibrary.simpleMessage("Carpet"),
         "Contactus": MessageLookupByLibrary.simpleMessage("Contact us"),
         "CreateNow": MessageLookupByLibrary.simpleMessage("Create Now"),
+        "DeliveryPrice": MessageLookupByLibrary.simpleMessage("Delivery Price"),
         "Donthaveanaccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account? "),
         "Doyouhaveanaccount":
@@ -55,12 +56,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "Quilt": MessageLookupByLibrary.simpleMessage("Quilt"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),
+        "ServicePrice": MessageLookupByLibrary.simpleMessage("Service Price"),
         "Sewing": MessageLookupByLibrary.simpleMessage("Sewing"),
         "SignUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "Subscribe": MessageLookupByLibrary.simpleMessage("Subscribe"),
         "Subscriptions": MessageLookupByLibrary.simpleMessage("Subscriptions"),
         "Thesubscription": MessageLookupByLibrary.simpleMessage(
             "The subscription containing "),
+        "TotalPrice": MessageLookupByLibrary.simpleMessage("Total Price"),
         "UserName": MessageLookupByLibrary.simpleMessage("User Name"),
         "Wallet": MessageLookupByLibrary.simpleMessage("Wallet"),
         "WashingIroning":

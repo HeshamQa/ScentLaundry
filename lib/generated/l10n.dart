@@ -409,6 +409,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Service Price`
+  String get ServicePrice {
+    return Intl.message(
+      'Service Price',
+      name: 'ServicePrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Price`
+  String get DeliveryPrice {
+    return Intl.message(
+      'Delivery Price',
+      name: 'DeliveryPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Price`
+  String get TotalPrice {
+    return Intl.message(
+      'Total Price',
+      name: 'TotalPrice',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

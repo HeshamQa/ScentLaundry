@@ -1,0 +1,103 @@
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:http/http.dart' as http;
+import '../../models/cartModel.dart';
+import '../../utils/Static/consvalue.dart';
+import '../../utils/Static/sharedpref.dart';
+
+class CartProvider extends ChangeNotifier{
+  List<CartModel> listCart = [];
+  double totalPrice = 0;
+
+  getCart() async {
+    EasyLoading.show(status: 'loading...');
+    listCart = [];
+    totalPrice = 0;
+    General.getPrefInt(ConsValues.id, 0).then(
+          (iduser) async {
+        final response = await http.post(
+          Uri.parse(
+            "${ConsValues.baseurl}getcart.php",
+          ),
+          body: {
+            "iduser": iduser.toString(),
+          },
+        );
+        EasyLoading.dismiss();
+        if (response.statusCode == 200) {
+          var jsonBody = jsonDecode(response.body);
+          var cart = jsonBody['cart'];
+          for (Map i in cart) {
+            listCart.add(CartModel.fromJson(i));
+            print(i['count'].runtimeType);
+            totalPrice = totalPrice + double.parse(i['price']) * int.parse(i['count']);
+          }
+          print(totalPrice);
+          notifyListeners();
+        }
+      },
+    );
+  }
+
+  addToCart({required var iditem,required var idcategories,required var count}) async {
+    EasyLoading.show(status: 'loading...');
+    General.getPrefInt(ConsValues.id, 0).then(
+          (iduser) async {
+        await http.post(
+          Uri.parse("${ConsValues.baseurl}addcart.php"),
+          body: {
+            "iduser": iduser.toString(),
+            "iditem": iditem.toString(),
+            "idcategories" : idcategories.toString(),
+            "count" : count.toString(),
+          },
+        );
+        EasyLoading.dismiss();
+      },
+    );
+  }
+
+  updateItemCount(var id, var count,var index) async {
+
+    EasyLoading.show(status: 'loading...');
+    //General.getPrefString(ConsValues.ID, "").then(
+    //(idUser) async {
+    if (count <= 0) {
+      deleteItemFromCart(id);
+      listCart.removeAt(index);
+    }
+    else {
+      final response = await http.post(
+        Uri.parse("${ConsValues.baseurl}updatecart.php"),
+        body: {
+          "id": id,
+          "count": count.toString(),
+        },
+      );
+
+      listCart[index].count = count;
+
+      totalPrice = 0;
+      for (CartModel i in listCart) {
+        print(i.count.runtimeType);
+        totalPrice = totalPrice + double.parse(i.price) * i.count;
+      }
+    }
+    // },);
+
+    EasyLoading.dismiss();
+    print(totalPrice);
+    notifyListeners();
+  }
+  deleteItemFromCart(var id) async{
+
+    final response = await http.post(
+      Uri.parse("${ConsValues.baseurl}deletecart.php"),
+      body: {
+        "id": id,
+      },
+    );
+  }
+}

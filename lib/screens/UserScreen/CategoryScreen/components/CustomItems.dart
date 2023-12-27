@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scentlaundry/controller/providers/ItemProvider.dart';
+import 'package:scentlaundry/controller/providers/cartprovider.dart';
 import 'package:scentlaundry/screens/UserScreen/CategoryScreen/components/itemContainer.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../utils/Static/Size_Config.dart';
@@ -23,7 +24,7 @@ class _CustomItemsState extends State<CustomItems> {
     Provider.of<ItemProvider>(context, listen: false).getItem(widget.id);
     super.initState();
   }
-
+Map<int,int> counter= {};
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -36,6 +37,9 @@ class _CustomItemsState extends State<CustomItems> {
                     ListView.builder(
               itemCount: value.listItem.length,
               itemBuilder: (context, index) {
+                if (!counter.containsKey(int.parse(value.listItem[index].id))) {
+                  counter[int.parse(value.listItem[index].id)] = 0;
+                }
                 return ItemContainer(
                   child: Row(
                     children: [
@@ -64,7 +68,13 @@ class _CustomItemsState extends State<CustomItems> {
                         flex: 2,
                       ),
                       InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            setState(() {
+                              if (counter[int.parse(value.listItem[index].id)]! > 0) {
+                                counter[int.parse(value.listItem[index].id)] = counter[int.parse(value.listItem[index].id)]! - 1;
+                              }
+                            });
+                          },
                           child: const Text(
                             "-",
                             style: TextStyle(fontSize: 25),
@@ -72,15 +82,19 @@ class _CustomItemsState extends State<CustomItems> {
                       const Spacer(
                         flex: 1,
                       ),
-                      const Text(
-                        "0",
-                        style: TextStyle(fontSize: 20),
+                      Text(
+                        counter[int.parse(value.listItem[index].id)].toString(),
+                        style: const TextStyle(fontSize: 20),
                       ),
                       const Spacer(
                         flex: 1,
                       ),
                       InkWell(
-                          onTap: () {},
+                          onTap: () {
+                            setState(() {
+                              counter[int.parse(value.listItem[index].id)] = counter[int.parse(value.listItem[index].id)]! + 1;
+                            });
+                          },
                           child: const Text(
                             "+",
                             style: TextStyle(fontSize: 25),
@@ -101,7 +115,16 @@ class _CustomItemsState extends State<CustomItems> {
               padding: EdgeInsets.symmetric(
                   vertical: getProportionateScreenHeight(20),
                   horizontal: getProportionateScreenWidth(30)),
-              child: CustomButton(press: () {}, title: "Add To Cart"),
+              child: CustomButton(press: () {
+                counter.forEach((key, value) {
+                  if(value!=0){
+                    Provider.of<CartProvider>(context,listen: false).addToCart(iditem: key, idcategories: widget.id, count: value);
+                    setState(() {
+                      counter[key]=0;
+                    });
+                  }
+                });
+              }, title: "Add To Cart"),
             ))
       ],
     );

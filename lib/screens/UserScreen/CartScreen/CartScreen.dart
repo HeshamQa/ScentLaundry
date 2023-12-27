@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:scentlaundry/screens/UserScreen/CartScreen/components/BottomContainer.dart';
-import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import '../../../utils/Static/StaticColors.dart';
 import 'components/CartItems.dart';
 
@@ -20,13 +19,10 @@ class _CartScreenState extends State<CartScreen> {
         title: const Text("Cart"),
       ),
       backgroundColor: StaticColors.primaryColor,
-      body: Column(
+      body: const Column(
         children: [
-          SizedBox(
-            height: getProportionateScreenHeight(550),
-            child: const CartItems(),
-          ),
-          const BottomContainer(),
+          CartItems(),
+          BottomContainer(),
         ],
       ),
     );

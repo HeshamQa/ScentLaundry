@@ -34,5 +34,8 @@
         "Ifyouwantto": "If you want to subscribe Press the button below",
         "Subscribe": "Subscribe",
         "Thesubscription": "The subscription containing ",
-        "piecesof": " pieces of (T-Shirt, Pants, Short, underwear, Sucks, shoes) for only "
+        "piecesof": " pieces of (T-Shirt, Pants, Short, underwear, Sucks, shoes) for only ",
+        "ServicePrice": "Service Price",
+        "DeliveryPrice" : "Delivery Price",
+        "TotalPrice": "Total Price"
 }
