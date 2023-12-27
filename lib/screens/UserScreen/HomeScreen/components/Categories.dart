@@ -30,7 +30,7 @@ class _CategoriesState extends State<Categories> {
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) => InkWell(
             onTap: () {
-              Get.to(const CategoryScreen());
+              Get.to(CategoryScreen(name: value.listCategoriesModel[index].name, image: value.listCategoriesModel[index].popimage, id: value.listCategoriesModel[index].id,));
             },
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),

@@ -10,6 +10,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
     List<ImageBannerModel> listImageBannerModel = [];
 
     getBannerImages() async {
+      listImageBannerModel.clear();
       EasyLoading.show(status: 'loading...');
       final response =
       await http.get(Uri.parse("${ConsValues.baseurl}getimagebanner.php"));

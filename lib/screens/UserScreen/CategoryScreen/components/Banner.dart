@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-
 import '../../../../utils/Static/Size_Config.dart';
 
 class Baner extends StatelessWidget {
-  const Baner({super.key,});
+  final String image;
+  const Baner({super.key, required this.image,});
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +21,9 @@ class Baner extends StatelessWidget {
       ),
       child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
-          // child: Hero(
-          //     // tag: data[index].id,
-          //     child: Image.network(data[index]['PopImage'], fit: BoxFit.fill))
+          child: Hero(
+              tag: image,
+              child: Image.network(image, fit: BoxFit.cover))
     ),
     );
   }

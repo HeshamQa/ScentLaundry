@@ -9,6 +9,7 @@ class PopCateProvider extends ChangeNotifier {
   List<CategoriesModel> listPopCategories = [];
 
   getPopCate() async {
+    listPopCategories.clear();
     final response = await http.get(
       Uri.parse("${ConsValues.baseurl}getpopcate.php"),
     );

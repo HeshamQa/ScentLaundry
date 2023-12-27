@@ -9,6 +9,7 @@ class CategoriesProvider extends ChangeNotifier {
   List<CategoriesModel> listCategoriesModel = [];
 
   getCategories() async {
+    listCategoriesModel.clear();
     final response = await http.get(
       Uri.parse("${ConsValues.baseurl}getcategories.php"),
     );
