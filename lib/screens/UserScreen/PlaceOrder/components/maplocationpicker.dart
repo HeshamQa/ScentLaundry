@@ -39,7 +39,7 @@ class _LocationScreenState extends State<LocationScreen> {
           children : [
             SizedBox(
                 width: getProportionateScreenWidth(375),
-                height: getProportionateScreenHeight(500),
+                height: getProportionateScreenHeight(600),
                 child: GoogleMap(
                   initialCameraPosition: _cameraPosition!,
                   mapType: MapType.normal,
@@ -58,7 +58,7 @@ class _LocationScreenState extends State<LocationScreen> {
             ),
             SizedBox(
               width: getProportionateScreenWidth(375),
-              height: getProportionateScreenHeight(500),
+              height: getProportionateScreenHeight(600),
               child: Center(
                 child: SizedBox(
                   width: getProportionateScreenWidth(150),

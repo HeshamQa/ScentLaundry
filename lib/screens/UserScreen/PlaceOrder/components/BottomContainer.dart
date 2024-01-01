@@ -14,14 +14,13 @@ class BottomContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: getProportionateScreenHeight(300),
+      height: getProportionateScreenHeight(200),
       child: CustomContainer(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SearchBar(),
                 SizedBox(height: getProportionateScreenHeight(10)),
                 const CurrentLoc(),
                 const Spacer(),
