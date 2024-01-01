@@ -17,7 +17,7 @@ class _datetimeState extends State<DatesTime> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
+      children: [
         DatePicker(
           height: getProportionateScreenHeight(100),
           DateTime.now().add(const Duration(days: 1)),

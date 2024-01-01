@@ -20,16 +20,18 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController passwordEditingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: Column(
           children: [
-            BackGround(
-              height: getProportionateScreenHeight(315),
-              title: S.of(context).LogIn,
-              h: 150,
+            Hero(
+              tag: "logoImage",
+              child: BackGround(
+                height: getProportionateScreenHeight(315),
+                title: S.of(context).LogIn,
+                h: 150,
+              ),
             ),
             SizedBox(
               height: getProportionateScreenHeight(15),

@@ -31,10 +31,8 @@ class CartProvider extends ChangeNotifier{
           var cart = jsonBody['cart'];
           for (Map i in cart) {
             listCart.add(CartModel.fromJson(i));
-            print(i['count'].runtimeType);
             totalPrice = totalPrice + double.parse(i['price']) * int.parse(i['count']);
           }
-          print(totalPrice);
           notifyListeners();
         }
       },
@@ -69,7 +67,7 @@ class CartProvider extends ChangeNotifier{
       listCart.removeAt(index);
     }
     else {
-      final response = await http.post(
+       await http.post(
         Uri.parse("${ConsValues.baseurl}updatecart.php"),
         body: {
           "id": id,
@@ -78,22 +76,19 @@ class CartProvider extends ChangeNotifier{
       );
 
       listCart[index].count = count;
-
+    }
       totalPrice = 0;
       for (CartModel i in listCart) {
-        print(i.count.runtimeType);
         totalPrice = totalPrice + double.parse(i.price) * i.count;
       }
-    }
+
     // },);
 
     EasyLoading.dismiss();
-    print(totalPrice);
     notifyListeners();
   }
   deleteItemFromCart(var id) async{
-
-    final response = await http.post(
+     await http.post(
       Uri.parse("${ConsValues.baseurl}deletecart.php"),
       body: {
         "id": id,

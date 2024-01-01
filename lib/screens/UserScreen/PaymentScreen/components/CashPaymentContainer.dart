@@ -20,6 +20,7 @@ class _CashPaymentContainerState extends State<CashPaymentContainer> {
         top: getProportionateScreenHeight(15),
         bottom: getProportionateScreenHeight(75),
       ),
+      padding: const EdgeInsets.symmetric(horizontal: 5),
       width: getProportionateScreenWidth(325),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -35,9 +36,9 @@ class _CashPaymentContainerState extends State<CashPaymentContainer> {
       ),
       child: Row(
         children: [
-          Image.asset('assets/images/cash.png'),
+          Image.asset('assets/images/cash.png',height: getProportionateScreenHeight(50),),
           const Text(
-            'Pay on Cash Or Subscriptions',
+            'Pay on Cash',
             style: TextStyle(fontSize: 17),
           ),
           const Spacer(),

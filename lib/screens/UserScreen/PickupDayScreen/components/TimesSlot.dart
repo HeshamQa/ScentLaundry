@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:scentlaundry/screens/UserScreen/PickupDayScreen/components/datetime.dart';
 import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
 import '../../../../controller/timecontroller.dart';
@@ -80,7 +81,7 @@ class _TimesPickerState extends State<TimesPicker> {
         RichText(text: TextSpan(children:
         [
            TextSpan(text: "Receipt Day : ",style: TextStyle(fontSize: 25 ,color: StaticColors.black)),
-           TextSpan(text:  "${timeController.selectedValue.value.month} - ${timeController.selectedValue.value.day}",style: TextStyle(fontSize: 25,color: StaticColors.blue))
+           TextSpan(text:  "${selectedValue.month} - ${selectedValue.day}",style: TextStyle(fontSize: 25,color: StaticColors.blue))
         ])),
         SizedBox(height: getProportionateScreenHeight(15),),
         RichText(text: TextSpan(children:

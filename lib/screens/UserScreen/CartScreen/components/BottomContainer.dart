@@ -16,45 +16,65 @@ class BottomContainer extends StatefulWidget {
 
 class _BottomContainerState extends State<BottomContainer> {
   @override
-  void initState() {
-    // Provider.of<CartProvider>(context,listen: false).getCart();
-    super.initState();
-  }
-  @override
   Widget build(BuildContext context) {
     return Expanded(
       child: CustomContainer(
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+        padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 5),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(S.of(context).ServicePrice,style: const TextStyle(fontSize: 18,fontFamily: 'Inter'),),
-                    Consumer<CartProvider>(
-                        builder: (BuildContext context, CartProvider value, Widget? child) =>
-                        Text("${value.totalPrice}${S.of(context).JOD}",style: const TextStyle(fontSize: 18,fontFamily: 'Inter'),))
-                  ],
+                Text(
+                  S.of(context).ServicePrice,
+                  style: const TextStyle(fontSize: 18, fontFamily: 'Inter'),
                 ),
-                Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(S.of(context).DeliveryPrice,style: const TextStyle(fontSize: 18,fontFamily: 'Inter'),),
-                    Text("3.00${S.of(context).JOD}",style: const TextStyle(fontSize: 18,fontFamily: 'Inter'),)
-                  ],
-                ),
-                Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                     Text(S.of(context).TotalPrice,style:const TextStyle(fontSize: 22), ),
-                    Consumer<CartProvider>(builder: (context, value, child) =>  Text("${value.totalPrice+3.00}${S.of(context).JOD}",style: const TextStyle(fontSize: 22),))
-                  ],
-                ),
-                CustomButton(press: (){
-                  Get.toNamed(Approute.PlaceOrder);}, title: "Place Order")
+                Consumer<CartProvider>(
+                  builder: (BuildContext context, CartProvider value,
+                          Widget? child) =>
+                      Text(
+                    "${value.totalPrice}${S.of(context).JOD}",
+                    style: const TextStyle(fontSize: 18, fontFamily: 'Inter'),
+                  ),
+                )
               ],
             ),
-          )
-      ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  S.of(context).DeliveryPrice,
+                  style: const TextStyle(fontSize: 18, fontFamily: 'Inter'),
+                ),
+                Text(
+                  "3.00${S.of(context).JOD}",
+                  style: const TextStyle(fontSize: 18, fontFamily: 'Inter'),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  S.of(context).TotalPrice,
+                  style: const TextStyle(fontSize: 22),
+                ),
+                Consumer<CartProvider>(
+                    builder: (context, value, child) => Text(
+                          "${value.totalPrice+3.00}${S.of(context).JOD}",
+                          style: const TextStyle(fontSize: 22),
+                        ))
+              ],
+            ),
+            CustomButton(
+                press: () {
+                  Get.toNamed(Approute.PlaceOrder);
+                },
+                title: "Place Order")
+          ],
+        ),
+      )),
     );
   }
 }

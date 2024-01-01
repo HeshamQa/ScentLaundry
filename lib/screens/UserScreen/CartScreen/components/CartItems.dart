@@ -19,7 +19,7 @@ class _CartItemsState extends State<CartItems> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: getProportionateScreenHeight(550),
+      height: getProportionateScreenHeight(525),
       child: Consumer<CartProvider>(
         builder: (BuildContext context, CartProvider value, Widget? child) =>
             ListView.builder(

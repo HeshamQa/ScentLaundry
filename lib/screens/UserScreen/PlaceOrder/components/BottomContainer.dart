@@ -28,7 +28,7 @@ class BottomContainer extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: CustomButton(press: (){
-                        Get.toNamed(Approute.PickupDayScreen);
+                    Get.toNamed(Approute.PickupDayScreen);
                   }, title: "Next"),
                 ),
               ],

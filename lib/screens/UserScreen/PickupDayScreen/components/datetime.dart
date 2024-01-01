@@ -10,14 +10,14 @@ class DatesTime extends StatefulWidget {
   @override
   State<DatesTime> createState() => _DatesTimeState();
 }
-late DateTime selectedValue;
+DateTime selectedValue=DateTime(0);
 TimeController timeController = TimeController();
 class _DatesTimeState extends State<DatesTime> {
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
+      children: [
         DatePicker(
           height: getProportionateScreenHeight(100),
           DateTime.now(),

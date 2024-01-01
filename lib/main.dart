@@ -9,12 +9,10 @@ import 'package:scentlaundry/controller/providers/PopCate.dart';
 import 'package:scentlaundry/controller/providers/cartprovider.dart';
 import 'package:scentlaundry/controller/providers/imagebanner.dart';
 import 'package:scentlaundry/generated/l10n.dart';
-import 'package:scentlaundry/screens/UserScreen/HomeScreen/HomeScreen.dart';
-import 'package:scentlaundry/screens/UserScreen/LoginScreen/LoginScreen.dart';
+import 'package:scentlaundry/screens/UserScreen/SplashScreen/splashscreen.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
+import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
-import 'package:scentlaundry/utils/Static/sharedpref.dart';
-
 import 'controller/providers/subscripeprovider.dart';
 
 Future<void> main() async {
@@ -31,6 +29,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<CategoriesProvider>(
@@ -72,12 +71,8 @@ class _MyAppState extends State<MyApp> {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightBlueAccent),
           useMaterial3: true,
         ),
-        home: General.getPrefInt('id', 3) == 3
-            ? const LoginScreen()
-            : General.getPrefInt('idusertype', 1) == 1
-                ? const HomeScreen()
-                : const HomeScreen(),
-        routes: route,
+        home: const SplashScreen(),
+        getPages: route.values.toList(),
         builder: EasyLoading.init(),
       ),
     );

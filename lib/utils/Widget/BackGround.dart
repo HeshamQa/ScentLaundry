@@ -26,7 +26,6 @@ class BackGround extends StatelessWidget {
           width: getProportionateScreenWidth(375),
           height: height,
           child: Column(
-            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(

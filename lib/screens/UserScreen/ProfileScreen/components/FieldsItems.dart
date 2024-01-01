@@ -1,18 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:scentlaundry/utils/Static/consvalue.dart';
+import 'package:scentlaundry/utils/Static/sharedpref.dart';
 
 import '../../../../utils/Static/Size_Config.dart';
 import '../../../../utils/Widget/TextForm.dart';
 
-class FieldsItems extends StatelessWidget {
+class FieldsItems extends StatefulWidget {
   const FieldsItems({super.key});
 
+  @override
+  State<FieldsItems> createState() => _FieldsItemsState();
+}
+
+class _FieldsItemsState extends State<FieldsItems> {
+  String? name;
+  String? phone;
+  @override
+  initState(){
+    super.initState();
+    getUserInfo();
+  }
+  getUserInfo(){
+    General.getPrefString(ConsValues.NAME, '').then((value) {setState(() {
+      name=value;
+    });});
+    General.getPrefString(ConsValues.PHONE, '').then((value) {setState(() {
+      phone=value;
+    });});
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         TextForm(
           textEditingController:
-          TextEditingController(text: "Hesham Ahmed AlQaoud"),
+          TextEditingController(text: name),
           obscure: false,
           hint: "User Name",
           enabled: false,
@@ -26,7 +48,7 @@ class FieldsItems extends StatelessWidget {
                 width: getProportionateScreenWidth(250),
                 child: TextForm(
                   textEditingController:
-                  TextEditingController(text: "0788828337"),
+                  TextEditingController(text: phone),
                   obscure: false,
                   hint: "Phone",
                   enabled: false,
