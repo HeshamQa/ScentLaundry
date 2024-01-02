@@ -489,6 +489,16 @@ class S {
       args: [],
     );
   }
+
+  /// `(T-Shirt, Pants, Short, underwear, Sucks, shoes)`
+  String get TShirtPantsShort {
+    return Intl.message(
+      '(T-Shirt, Pants, Short, underwear, Sucks, shoes)',
+      name: 'TShirtPantsShort',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

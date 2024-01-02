@@ -8,6 +8,7 @@ import 'package:scentlaundry/controller/providers/ItemProvider.dart';
 import 'package:scentlaundry/controller/providers/PopCate.dart';
 import 'package:scentlaundry/controller/providers/cartprovider.dart';
 import 'package:scentlaundry/controller/providers/imagebanner.dart';
+import 'package:scentlaundry/controller/providers/sub_controller.dart';
 import 'package:scentlaundry/generated/l10n.dart';
 import 'package:scentlaundry/screens/UserScreen/SplashScreen/splashscreen.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
@@ -49,6 +50,9 @@ class _MyAppState extends State<MyApp> {
         ),
         ChangeNotifierProvider<CartProvider>(
           create: (_) => CartProvider(),
+        ),
+        ChangeNotifierProvider<SubController>(
+          create: (_) => SubController(),
         ),
       ],
       child: GetMaterialApp(

@@ -42,5 +42,6 @@
     "ChoosePickUpTime": "اختر وقت الاستلام",
     "PickUpDay": "يوم الاستلام : ",
     "PickUpTime": "وقت الاسنلام : ",
-    "PickUpDate": "موعد الاستلام"
+    "PickUpDate": "موعد الاستلام",
+    "TShirtPantsShort": "(بلوزة, بنطال, شورت, ملابس داخلية, جوارب, حذاء)"
 }

@@ -11,15 +11,15 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: getProportionateScreenWidth(360),
+      width: getProportionateScreenWidth(300),
       child: TextButton(
           onPressed: press,
           style: ButtonStyle(
               backgroundColor:
               MaterialStatePropertyAll(StaticColors.black),
-              shape: const MaterialStatePropertyAll(
+              shape: MaterialStatePropertyAll(
                   RoundedRectangleBorder(
-                      borderRadius: BorderRadius.zero))
+                      borderRadius: BorderRadius.circular(8)))
           ),
           child: Text(
             title,

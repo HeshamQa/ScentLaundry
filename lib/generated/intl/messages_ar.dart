@@ -67,6 +67,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "SignUp": MessageLookupByLibrary.simpleMessage("انشئ حساب"),
         "Subscribe": MessageLookupByLibrary.simpleMessage("اشترك"),
         "Subscriptions": MessageLookupByLibrary.simpleMessage("الاشتراكات"),
+        "TShirtPantsShort": MessageLookupByLibrary.simpleMessage(
+            "(بلوزة, بنطال, شورت, ملابس داخلية, جوارب, حذاء)"),
         "Thesubscription":
             MessageLookupByLibrary.simpleMessage("الاشتراك يحتوي على"),
         "TotalPrice": MessageLookupByLibrary.simpleMessage("المجموع"),

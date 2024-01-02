@@ -42,5 +42,6 @@
         "ChoosePickUpTime": "Choose Pick Up Time",
         "PickUpDay": "PickUp Day : ",
         "PickUpTime": "PickUp Time : ",
-        "PickUpDate": "Pick Up Date"
+        "PickUpDate": "Pick Up Date",
+        "TShirtPantsShort": "(T-Shirt, Pants, Short, underwear, Sucks, shoes)"
 }

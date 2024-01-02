@@ -137,18 +137,15 @@ class _PickupDayScreenState extends State<PickupDayScreen> {
                 SizedBox(
                   height: getProportionateScreenHeight(15),
                 ),
-                Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: getProportionateScreenWidth(40.0),
-                        vertical: getProportionateScreenHeight(20)),
-                    child: CustomButton(
-                        title: S.of(context).Next,
-                        press: () {
-                          controller.updatePickUpDate(selectedValue, val2);
-                          print(controller.day.value);
-                          print(controller.time.value);
-                          Get.toNamed(Approute.ReceiptTime);
-                        })),
+                Align(
+                  alignment: Alignment.center,
+                  child: CustomButton(
+                      title: S.of(context).Next,
+                      press: () {
+                        controller.updatePickUpDate(selectedValue, val2);
+                        Get.toNamed(Approute.ReceiptTime);
+                      }),
+                ),
               ],
             ),
           ),

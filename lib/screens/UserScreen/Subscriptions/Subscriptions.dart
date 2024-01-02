@@ -3,6 +3,7 @@ import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Container.dart';
 
+import '../../../generated/l10n.dart';
 import 'components/SubBuilder.dart';
 
 class Subscriptions extends StatelessWidget {
@@ -12,7 +13,7 @@ class Subscriptions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Subscriptions"),
+        title: Text(S.of(context).MySubscription),
       ),
       body: Scaffold(
           backgroundColor: StaticColors.primaryColor,

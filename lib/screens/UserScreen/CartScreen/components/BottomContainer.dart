@@ -22,6 +22,7 @@ class _BottomContainerState extends State<BottomContainer> {
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 5),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

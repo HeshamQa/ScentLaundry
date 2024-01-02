@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:scentlaundry/controller/providers/sub_controller.dart';
 import 'package:scentlaundry/models/SubscribeModel.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../utils/Static/Size_Config.dart';
@@ -39,7 +41,9 @@ class SubBody extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: getProportionateScreenWidth(10.0)),
-              child: CustomButton(press: () {}, title: S.of(context).Subscribe),
+              child: CustomButton(press: () {
+                Provider.of<SubController>(context,listen: false).addSub(idsub: subscribeModel.id,count: subscribeModel.count);
+              }, title: S.of(context).Subscribe),
             ),
           ],
         ),
