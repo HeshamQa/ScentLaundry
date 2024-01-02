@@ -439,6 +439,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Choose Pick Up Day`
+  String get ChoosePickUpDay {
+    return Intl.message(
+      'Choose Pick Up Day',
+      name: 'ChoosePickUpDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose Pick Up Time`
+  String get ChoosePickUpTime {
+    return Intl.message(
+      'Choose Pick Up Time',
+      name: 'ChoosePickUpTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `PickUp Day : `
+  String get PickUpDay {
+    return Intl.message(
+      'PickUp Day : ',
+      name: 'PickUpDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `PickUp Time : `
+  String get PickUpTime {
+    return Intl.message(
+      'PickUp Time : ',
+      name: 'PickUpTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pick Up Date`
+  String get PickUpDate {
+    return Intl.message(
+      'Pick Up Date',
+      name: 'PickUpDate',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

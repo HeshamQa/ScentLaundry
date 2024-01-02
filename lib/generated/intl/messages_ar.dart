@@ -25,6 +25,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Bag": MessageLookupByLibrary.simpleMessage("شنط"),
         "Car": MessageLookupByLibrary.simpleMessage("سيارة"),
         "Carpet": MessageLookupByLibrary.simpleMessage("سجاد"),
+        "ChoosePickUpDay":
+            MessageLookupByLibrary.simpleMessage("اختر تاريخ الاستلام"),
+        "ChoosePickUpTime":
+            MessageLookupByLibrary.simpleMessage("اختر وقت الاستلام"),
         "Contactus": MessageLookupByLibrary.simpleMessage("تواصل معنا"),
         "CreateNow": MessageLookupByLibrary.simpleMessage("انشئ الآن"),
         "DeliveryPrice": MessageLookupByLibrary.simpleMessage("سعر التوصيل"),
@@ -51,6 +55,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Orders": MessageLookupByLibrary.simpleMessage("الطلبات"),
         "Password": MessageLookupByLibrary.simpleMessage("كلمة السر"),
         "Phone": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
+        "PickUpDate": MessageLookupByLibrary.simpleMessage("موعد الاستلام"),
+        "PickUpDay": MessageLookupByLibrary.simpleMessage("يوم الاستلام : "),
+        "PickUpTime": MessageLookupByLibrary.simpleMessage("وقت الاسنلام : "),
         "Profile": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
         "Quilt": MessageLookupByLibrary.simpleMessage("الحفه"),
         "ResetPassword":

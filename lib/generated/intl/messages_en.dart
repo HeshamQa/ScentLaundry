@@ -25,6 +25,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "Bag": MessageLookupByLibrary.simpleMessage("Bag"),
         "Car": MessageLookupByLibrary.simpleMessage("Car"),
         "Carpet": MessageLookupByLibrary.simpleMessage("Carpet"),
+        "ChoosePickUpDay":
+            MessageLookupByLibrary.simpleMessage("Choose Pick Up Day"),
+        "ChoosePickUpTime":
+            MessageLookupByLibrary.simpleMessage("Choose Pick Up Time"),
         "Contactus": MessageLookupByLibrary.simpleMessage("Contact us"),
         "CreateNow": MessageLookupByLibrary.simpleMessage("Create Now"),
         "DeliveryPrice": MessageLookupByLibrary.simpleMessage("Delivery Price"),
@@ -53,6 +57,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "Orders": MessageLookupByLibrary.simpleMessage("Orders"),
         "Password": MessageLookupByLibrary.simpleMessage("Password"),
         "Phone": MessageLookupByLibrary.simpleMessage("Phone"),
+        "PickUpDate": MessageLookupByLibrary.simpleMessage("Pick Up Date"),
+        "PickUpDay": MessageLookupByLibrary.simpleMessage("PickUp Day : "),
+        "PickUpTime": MessageLookupByLibrary.simpleMessage("PickUp Time : "),
         "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "Quilt": MessageLookupByLibrary.simpleMessage("Quilt"),
         "ResetPassword": MessageLookupByLibrary.simpleMessage("Reset Password"),

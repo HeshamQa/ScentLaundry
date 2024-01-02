@@ -37,5 +37,10 @@
         "piecesof": " pieces of (T-Shirt, Pants, Short, underwear, Sucks, shoes) for only ",
         "ServicePrice": "Service Price",
         "DeliveryPrice" : "Delivery Price",
-        "TotalPrice": "Total Price"
+        "TotalPrice": "Total Price",
+        "ChoosePickUpDay": "Choose Pick Up Day",
+        "ChoosePickUpTime": "Choose Pick Up Time",
+        "PickUpDay": "PickUp Day : ",
+        "PickUpTime": "PickUp Time : ",
+        "PickUpDate": "Pick Up Date"
 }

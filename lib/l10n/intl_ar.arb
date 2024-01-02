@@ -37,5 +37,10 @@
     "piecesof": "قطعة من (تي شيرت, بنطال, شورت, ملابس داخلية, جوارب, احذية) فقط بـ",
     "ServicePrice": "سعر الخدمة",
     "DeliveryPrice": "سعر التوصيل",
-    "TotalPrice": "المجموع"
+    "TotalPrice": "المجموع",
+    "ChoosePickUpDay": "اختر تاريخ الاستلام",
+    "ChoosePickUpTime": "اختر وقت الاستلام",
+    "PickUpDay": "يوم الاستلام : ",
+    "PickUpTime": "وقت الاسنلام : ",
+    "PickUpDate": "موعد الاستلام"
 }
