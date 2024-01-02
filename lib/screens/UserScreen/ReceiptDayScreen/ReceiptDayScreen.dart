@@ -6,7 +6,7 @@ import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Button.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Container.dart';
-import '../../../controller/timecontroller.dart';
+import '../../../controller/time_controller.dart';
 import '../../../generated/l10n.dart';
 
 class ReceiptTime extends StatefulWidget {

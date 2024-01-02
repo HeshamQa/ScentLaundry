@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:scentlaundry/controller/providers/ItemProvider.dart';
+import 'package:scentlaundry/controller/providers/item_provider.dart';
 import 'package:scentlaundry/controller/providers/cartprovider.dart';
 import 'package:scentlaundry/screens/UserScreen/CategoryScreen/components/itemContainer.dart';
 import '../../../../generated/l10n.dart';

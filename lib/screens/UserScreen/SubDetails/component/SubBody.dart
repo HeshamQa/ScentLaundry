@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:scentlaundry/controller/providers/sub_controller.dart';
-import 'package:scentlaundry/models/SubscribeModel.dart';
+import 'package:scentlaundry/models/subscribe_model.dart';
 import '../../../../generated/l10n.dart';
 import '../../../../utils/Static/Size_Config.dart';
 import '../../../../utils/Widget/Custom_Button.dart';

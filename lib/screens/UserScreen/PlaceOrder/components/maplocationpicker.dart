@@ -1,10 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
-import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:lottie/lottie.dart';
-import 'package:scentlaundry/controller/location_controller.dart';
+import 'package:scentlaundry/utils/Static/sharedpref.dart';
 import '../../../../utils/Static/Size_Config.dart';
 import '../PlaceOrder.dart';
 
@@ -19,7 +18,7 @@ class _LocationScreenState extends State<LocationScreen> {
   CameraPosition? _cameraPosition;
   late LatLng _defaultLatLng;
   late LatLng _draggedLatLng;
-  LocController controller = Get.put(LocController());
+  // LocController controller = Get.put(LocController());
   @override
   void initState() {
     _init();
@@ -75,8 +74,8 @@ class _LocationScreenState extends State<LocationScreen> {
     String addresStr = "${address.street}, ${address.locality}, ${address.administrativeArea}, ${address.country}, ${position.latitude}:${position.longitude}";
     setState(() {
       draggedAddress = addresStr;
-      controller.setLatLng(position.toString());
-      print(controller.address.value);
+      General.savePrefString('lat', position.latitude.toString());
+      General.savePrefString('lng', position.longitude.toString());
     });
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:scentlaundry/controller/providers/imagebanner.dart';
+import 'package:scentlaundry/controller/providers/image_banner.dart';
 import '../../../../utils/Static/Size_Config.dart';
 
 class BannerImage extends StatefulWidget {

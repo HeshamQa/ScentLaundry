@@ -63,7 +63,7 @@ class SignUpScreen extends StatelessWidget {
                     CustomButton(
                       title: S.of(context).SignUp,
                       press: () {
-                        passwordTextEditingController.text==confirmPasswordTextEditingController.text?SignUp(context, nameEditingController, phoneTextEditingController, passwordTextEditingController):showDialog(
+                        passwordTextEditingController.text==confirmPasswordTextEditingController.text?signup(context, nameEditingController, phoneTextEditingController, passwordTextEditingController):showDialog(
                           context: context,
                           builder: (context) => AlertDialog(
                             title: const Text('Sign Up Error'),

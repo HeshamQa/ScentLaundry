@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import '../../models/CategoriesModel.dart';
+import '../../models/categories_model.dart';
 import '../../utils/Static/consvalue.dart';
 
 class PopCateProvider extends ChangeNotifier {

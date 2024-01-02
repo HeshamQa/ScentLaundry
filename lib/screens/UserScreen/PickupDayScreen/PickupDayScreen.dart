@@ -1,7 +1,7 @@
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:scentlaundry/controller/timecontroller.dart';
+import 'package:scentlaundry/controller/time_controller.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
 import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';

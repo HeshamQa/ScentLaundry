@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:http/http.dart' as http;
-import '../../models/cartModel.dart';
+import '../../models/cart_model.dart';
 import '../../utils/Static/consvalue.dart';
 import '../../utils/Static/sharedpref.dart';
 

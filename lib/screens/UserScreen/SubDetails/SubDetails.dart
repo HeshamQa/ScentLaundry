@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:scentlaundry/models/SubscribeModel.dart';
+import 'package:scentlaundry/models/subscribe_model.dart';
 import '../../../generated/l10n.dart';
 import '../../../utils/Static/StaticColors.dart';
 import 'component/SubBanner.dart';

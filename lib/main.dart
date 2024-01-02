@@ -3,18 +3,18 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import 'package:scentlaundry/controller/providers/Categories.dart';
-import 'package:scentlaundry/controller/providers/ItemProvider.dart';
-import 'package:scentlaundry/controller/providers/PopCate.dart';
+import 'package:scentlaundry/controller/providers/categories.dart';
+import 'package:scentlaundry/controller/providers/item_provider.dart';
+import 'package:scentlaundry/controller/providers/pop_cate.dart';
 import 'package:scentlaundry/controller/providers/cartprovider.dart';
-import 'package:scentlaundry/controller/providers/imagebanner.dart';
+import 'package:scentlaundry/controller/providers/image_banner.dart';
 import 'package:scentlaundry/controller/providers/sub_controller.dart';
 import 'package:scentlaundry/generated/l10n.dart';
 import 'package:scentlaundry/screens/UserScreen/SplashScreen/splashscreen.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
 import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
-import 'controller/providers/subscripeprovider.dart';
+import 'controller/providers/subscribe_provider.dart';
 
 Future<void> main() async {
   runApp(const MyApp());

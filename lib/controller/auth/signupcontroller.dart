@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
@@ -6,7 +8,7 @@ import 'package:http/http.dart' as http;
 import 'package:scentlaundry/utils/Static/Route.dart';
 import 'package:scentlaundry/utils/Static/consvalue.dart';
 
-SignUp(BuildContext context,TextEditingController name,TextEditingController phone,TextEditingController password) async {
+signup(BuildContext context,TextEditingController name,TextEditingController phone,TextEditingController password) async {
   // API endpoint URL
   var apiUrl = '${ConsValues.baseurl}signup.php'; // Replace with your API endpoint URL
 
@@ -31,11 +33,11 @@ SignUp(BuildContext context,TextEditingController name,TextEditingController pho
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: Text('Sign Up Error'),
+          title: const Text('Sign Up Error'),
           content: Text(message),
           actions: [
             TextButton(
-              child: Text('OK'),
+              child: const Text('OK'),
               onPressed: () => Navigator.pop(context),
             ),
           ],
@@ -49,11 +51,11 @@ SignUp(BuildContext context,TextEditingController name,TextEditingController pho
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Sign Up Error'),
+        title: const Text('Sign Up Error'),
         content: Text(message),
         actions: [
           TextButton(
-            child: Text('OK'),
+            child: const Text('OK'),
             onPressed: () => Navigator.pop(context),
           ),
         ],

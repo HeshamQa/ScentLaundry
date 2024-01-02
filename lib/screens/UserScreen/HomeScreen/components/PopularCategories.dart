@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:scentlaundry/utils/Static/locale_config.dart';
-import '../../../../controller/providers/PopCate.dart';
+import '../../../../controller/providers/pop_cate.dart';
 import '../../../../utils/Static/Size_Config.dart';
 import '../../CategoryScreen/CategoryScreen.dart';
 

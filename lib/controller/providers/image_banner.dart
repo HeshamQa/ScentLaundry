@@ -3,7 +3,7 @@
   import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
   import 'package:http/http.dart' as http;
-  import 'package:scentlaundry/models/imagebanner.dart';
+  import 'package:scentlaundry/models/image_banner.dart';
   import '../../utils/Static/consvalue.dart';
 
   class ImageBannerProvider extends ChangeNotifier {

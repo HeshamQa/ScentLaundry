@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -20,7 +22,6 @@ login(BuildContext context,TextEditingController phone,TextEditingController pas
   EasyLoading.dismiss();
   if (response.statusCode == 200) {
     var jsonBody = jsonDecode(response.body);
-    print("jsonBody = $jsonBody");
 
     if (jsonBody["result"]) {
       General.savePrefInt(ConsValues.id, jsonBody['id']);
