@@ -10,7 +10,7 @@ class SubContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         width: getProportionateScreenWidth(320),
-    height: getProportionateScreenHeight(150),
+    height: getProportionateScreenHeight(160),
     decoration: BoxDecoration(
     color: Colors.white,
     borderRadius: BorderRadius.circular(20),
@@ -23,7 +23,7 @@ class SubContainer extends StatelessWidget {
     margin: EdgeInsets.only(
     left: getProportionateScreenWidth(20),
     right: getProportionateScreenWidth(20),
-    bottom: getProportionateScreenHeight(20)),
+    bottom: getProportionateScreenHeight(10)),
     child: child,
     );
   }

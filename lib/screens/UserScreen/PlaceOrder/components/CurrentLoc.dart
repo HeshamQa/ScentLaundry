@@ -22,7 +22,6 @@ class _CurrentLocState extends State<CurrentLoc> {
     _init();
   }
   _init() {
-    //map will redirect to my current location when loaded
     _gotoUserCurrentPosition();
   }
   @override

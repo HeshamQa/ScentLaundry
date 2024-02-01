@@ -30,6 +30,7 @@ class _PopularCategoriesState extends State<PopularCategories> {
           : EdgeInsets.only(right: getProportionateScreenWidth(25)),
       child: Consumer<PopCateProvider>(
         builder: (context, value, child) => GridView.builder(
+
             itemCount: value.listPopCategories.length,
             itemBuilder: (context, index) {
               return InkWell(

@@ -7,7 +7,7 @@ import '../../models/cart_model.dart';
 import '../../utils/Static/consvalue.dart';
 import '../../utils/Static/sharedpref.dart';
 
-class CartProvider extends ChangeNotifier{
+class CartProvider extends ChangeNotifier {
   List<CartModel> listCart = [];
   double totalPrice = 0;
 
@@ -16,7 +16,7 @@ class CartProvider extends ChangeNotifier{
     listCart = [];
     totalPrice = 0;
     General.getPrefInt(ConsValues.id, 0).then(
-          (iduser) async {
+      (iduser) async {
         final response = await http.post(
           Uri.parse(
             "${ConsValues.baseurl}getcart.php",
@@ -31,7 +31,9 @@ class CartProvider extends ChangeNotifier{
           var cart = jsonBody['cart'];
           for (Map i in cart) {
             listCart.add(CartModel.fromJson(i));
-            totalPrice = totalPrice + double.parse(i['price']) * int.parse(i['count']);
+            totalPrice =
+                totalPrice + double.parse(i['price']) * int.parse(i['count']);
+            print(listCart[0].iditem);
           }
           notifyListeners();
         }
@@ -39,17 +41,20 @@ class CartProvider extends ChangeNotifier{
     );
   }
 
-  addToCart({required var iditem,required var idcategories,required var count}) async {
+  addToCart(
+      {required var iditem,
+      required var idcategories,
+      required var count}) async {
     EasyLoading.show(status: 'loading...');
     General.getPrefInt(ConsValues.id, 0).then(
-          (iduser) async {
+      (iduser) async {
         await http.post(
           Uri.parse("${ConsValues.baseurl}addcart.php"),
           body: {
             "iduser": iduser.toString(),
             "iditem": iditem.toString(),
-            "idcategories" : idcategories.toString(),
-            "count" : count.toString(),
+            "idcategories": idcategories.toString(),
+            "count": count.toString(),
           },
         );
         EasyLoading.dismiss();
@@ -57,17 +62,15 @@ class CartProvider extends ChangeNotifier{
     );
   }
 
-  updateItemCount(var id, var count,var index) async {
-
+  updateItemCount(var id, var count, var index) async {
     EasyLoading.show(status: 'loading...');
     //General.getPrefString(ConsValues.ID, "").then(
     //(idUser) async {
     if (count <= 0) {
       deleteItemFromCart(id);
       listCart.removeAt(index);
-    }
-    else {
-       await http.post(
+    } else {
+      await http.post(
         Uri.parse("${ConsValues.baseurl}updatecart.php"),
         body: {
           "id": id,
@@ -77,22 +80,44 @@ class CartProvider extends ChangeNotifier{
 
       listCart[index].count = count;
     }
-      totalPrice = 0;
-      for (CartModel i in listCart) {
-        totalPrice = totalPrice + double.parse(i.price) * i.count;
-      }
+    totalPrice = 0;
+    for (CartModel i in listCart) {
+      totalPrice = totalPrice + double.parse(i.price) * i.count;
+    }
 
     // },);
 
     EasyLoading.dismiss();
     notifyListeners();
   }
-  deleteItemFromCart(var id) async{
-     await http.post(
+
+  deleteItemFromCart(var id) async {
+    await http.post(
       Uri.parse("${ConsValues.baseurl}deletecart.php"),
       body: {
         "id": id,
       },
     );
+  }
+
+  addItemsToOrder(int orderId) async {
+    EasyLoading.show(status: 'loading...');
+
+    for (CartModel cartItem in listCart) {
+      await http.post(
+        Uri.parse("${ConsValues.baseurl}addorderdet.php"),
+        body: {
+          "idorder": orderId.toString(),
+          "iditem": cartItem.iditem.toString(),
+          "count": cartItem.count.toString(),
+        },
+      );
+      deleteItemFromCart(cartItem.id);
+    }
+    listCart.clear();
+    totalPrice = 0;
+    notifyListeners();
+
+    EasyLoading.dismiss();
   }
 }

@@ -56,11 +56,6 @@ Map<String, GetPage> route = {
       page: () => const PickupDayScreen(),
       transition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 900)),
-  Approute.ReceiptTime: GetPage(
-      name: Approute.ReceiptTime,
-      page: () => const ReceiptTime(),
-      transition: Transition.fadeIn,
-      transitionDuration: const Duration(milliseconds: 900)),
   Approute.ContactUs: GetPage(
       name: Approute.ContactUs,
       page: () => const Contact_Us(),
@@ -81,11 +76,6 @@ Map<String, GetPage> route = {
       page: () => const Subscriptions(),
       transition: Transition.fadeIn,
       transitionDuration: const Duration(milliseconds: 900)),
-  Approute.PaymentScreen: GetPage(
-      name: Approute.PaymentScreen,
-      page: () => const PaymentScreen(),
-      transition: Transition.fadeIn,
-      transitionDuration: const Duration(milliseconds: 900)),
   Approute.OrderStatusScreen: GetPage(
       name: Approute.OrderStatusScreen,
       page: () => const OrderStatusScreen(),
@@ -102,11 +92,9 @@ class Approute {
   static const String ProfileScreen = "/ProfileScreen";
   static const String PlaceOrder = "/PlaceOrder";
   static const String PickupDayScreen = "/PickupDayScreen";
-  static const String ReceiptTime = "/ReceiptTime";
   static const String ContactUs = "/Contact_Us";
   static const String MyOrder = "/MyOrder";
   static const String WalletScreen = "/WalletScreen";
-  static const String PaymentScreen = "/PaymentScreen";
   static const String Subscriptions = "/Subscriptions";
   static const String OrderStatusScreen = "/OrderStatusScreen";
 }

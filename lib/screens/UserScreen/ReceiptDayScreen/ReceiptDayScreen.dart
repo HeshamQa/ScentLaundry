@@ -1,164 +1,108 @@
-import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:scentlaundry/utils/Static/Route.dart';
+// ignore: depend_on_referenced_packages
+import 'package:intl/intl.dart';
+import 'package:date_picker_timeline/date_picker_timeline.dart';
+import 'package:scentlaundry/screens/UserScreen/PaymentScreen/PaymentScreen.dart';
 import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Button.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Container.dart';
-import '../../../controller/time_controller.dart';
-import '../../../generated/l10n.dart';
 
-class ReceiptTime extends StatefulWidget {
-  const ReceiptTime({super.key});
+class ReceiptDayScreen extends StatefulWidget {
+  final DateTime initialDate;
+  final String time;
+  const ReceiptDayScreen({Key? key, required this.initialDate, required this.time}) : super(key: key);
 
   @override
-  State<ReceiptTime> createState() => _ReceiptTimeState();
+  State<ReceiptDayScreen> createState() => _ReceiptDayScreenState();
 }
 
-class _ReceiptTimeState extends State<ReceiptTime> {
-  var val = 0;
-  var val2 = "";
-  TimeController controller = Get.put(TimeController());
-  late DateTime selectedValue;
-  late DateTime initialValue;
+class _ReceiptDayScreenState extends State<ReceiptDayScreen> {
+  late DateTime _selectedDate;
+  String _selectedTimeSlot = '12:00-3:00'; // Default time slot
+  final List<String> _timeSlots = ['12:00-3:00', '3:00-6:00', '6:00-9:00'];
 
   @override
   void initState() {
-    getCurrent();
     super.initState();
-  }
-
-  getCurrent() {
-    selectedValue = controller.day.value;
-    initialValue = controller.day.value;
+    _selectedDate = widget.initialDate.add(const Duration(days: 1)); // Start from the next day
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: StaticColors.primaryColor,
       appBar: AppBar(
-        title: const Text("Receipt time"),
+        title: const Text('Choose a receipt time'),
+        backgroundColor: StaticColors.primaryColor,
       ),
+      backgroundColor: StaticColors.primaryColor,
       body: Padding(
-        padding: const EdgeInsets.only(top: 80.0),
+        padding: EdgeInsets.only(top: getProportionateScreenHeight(75)),
         child: CustomContainer(
-            child: Padding(
-          padding: const EdgeInsets.all(10),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text("Choose Receipt Day", style: TextStyle(fontSize: 30)),
-              SizedBox(
-                height: getProportionateScreenHeight(20),
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  DatePicker(
-                    height: getProportionateScreenHeight(100),
-                    initialValue.add(const Duration(days: 1)),
-                    initialSelectedDate:
-                        initialValue.add(const Duration(days: 1)),
-                    selectionColor: StaticColors.blue,
-                    selectedTextColor: Colors.white,
-                    onDateChange: (date) {
-                      setState(() {
-                        selectedValue = date;
-                      });
-                    },
-                  ),
-                ],
-              ),
-              const Text("Choose Receipt Time", style: TextStyle(fontSize: 30)),
-              Column(
-                children: [
-                  SizedBox(
-                    height: getProportionateScreenHeight(60),
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: [
-                        MaterialButton(
-                          color: val == 1 ? Colors.blue : Colors.white,
-                          onPressed: () {
-                            setState(() {
-                              val = 1;
-                              val2 = "12:00 pm - 3:00 pm";
-                            });
-                          },
-                          child: const Text("12:00 pm - 3:00 pm",
-                              style: TextStyle(color: Colors.black)),
-                        ),
-                        MaterialButton(
-                          color: val == 2 ? Colors.blue : Colors.white,
-                          onPressed: () {
-                            setState(() {
-                              val = 2;
-                              val2 = "3:00 pm - 6:00 pm";
-                            });
-                          },
-                          child: const Text("3:00 pm - 6:00 pm"),
-                        ),
-                        MaterialButton(
-                          color: val == 3 ? Colors.blue : Colors.white,
-                          onPressed: () {
-                            setState(() {
-                              val = 3;
-                              val2 = "6:00 pm - 9:00 pm";
-                            });
-                          },
-                          child: const Text("6:00 pm - 9:00 pm"),
-                        ),
-                      ],
+              Expanded(
+                child: ListView(
+                  children: [
+                    ListTile(
+                      title: const Text('Choose receipt Day', style: TextStyle(fontSize: 20)),
+                      trailing: Text(DateFormat('EEEE, dd MMM').format(_selectedDate), style: const TextStyle(fontSize: 17)),
                     ),
-                  ),
-                  SizedBox(
-                    height: getProportionateScreenHeight(25),
-                  ),
-                  RichText(
-                      text: TextSpan(children: [
-                    TextSpan(
-                        text: "Receipt Day : ",
-                        style:
-                            TextStyle(fontSize: 25, color: StaticColors.black)),
-                    TextSpan(
-                        text: "${selectedValue.month} - ${selectedValue.day}",
-                        style:
-                            TextStyle(fontSize: 25, color: StaticColors.blue))
-                  ])),
-                  SizedBox(
-                    height: getProportionateScreenHeight(15),
-                  ),
-                  RichText(
-                      text: TextSpan(children: [
-                    TextSpan(
-                        text: "Receipt Time : ",
-                        style:
-                            TextStyle(fontSize: 25, color: StaticColors.black)),
-                    TextSpan(
-                        text: val2,
-                        style:
-                            TextStyle(fontSize: 25, color: StaticColors.blue))
-                  ])),
-                ],
+                    SizedBox(
+                      width: getProportionateScreenWidth(375),
+                      height: getProportionateScreenHeight(125),
+                      child: DatePicker(
+                        widget.initialDate.add(const Duration(days: 1)),
+                        initialSelectedDate: widget.initialDate.add(const Duration(days: 1)),
+                        selectionColor: StaticColors.primaryColor,
+                        selectedTextColor: Colors.black,
+                        onDateChange: (date) {
+                          setState(() {
+                            _selectedDate = date;
+                          });
+                        },
+                      ),
+                    ),
+                    SizedBox(height: getProportionateScreenHeight(25)),
+                    ListTile(
+                      title: const Text('Choose receipt Time', style: TextStyle(fontSize: 20)),
+                      trailing: Text(_selectedTimeSlot, style: const TextStyle(fontSize: 17)),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Wrap(
+                        spacing: 8.0,
+                        children: _timeSlots.map((timeSlot) {
+                          return ChoiceChip(
+                            label: Text(timeSlot),
+                            selected: _selectedTimeSlot == timeSlot,
+                            onSelected: (selected) {
+                              if (selected) {
+                                setState(() {
+                                  _selectedTimeSlot = timeSlot;
+                                });
+                              }
+                            },
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(
-                height: getProportionateScreenHeight(15),
-              ),
-              Align(
-                alignment: Alignment.center,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(25), vertical: getProportionateScreenHeight(25)),
                 child: CustomButton(
-                    press: () {
-                      controller.updateReceiptDate(selectedValue, val2);
-                      Get.toNamed(Approute.PaymentScreen);
-                    },
-                    title: S.of(context).Next),
-              )
+                  press: () {
+                   Get.to(PaymentScreen(pDate: widget.initialDate, rDate: _selectedDate, ptime: widget.time, rtime: _selectedTimeSlot,));
+                  },
+                  title: 'Next',
+                ),
+              ),
             ],
           ),
-        )),
+        ),
       ),
     );
   }
