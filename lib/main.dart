@@ -4,6 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:scentlaundry/controller/providers/categories.dart';
+import 'package:scentlaundry/controller/providers/dragged_adress_provider.dart';
 import 'package:scentlaundry/controller/providers/item_provider.dart';
 import 'package:scentlaundry/controller/providers/order_provider.dart';
 import 'package:scentlaundry/controller/providers/pop_cate.dart';
@@ -58,6 +59,9 @@ class _MyAppState extends State<MyApp> {
         ChangeNotifierProvider<OrderProvider>(
           create: (_) => OrderProvider(),
         ),
+        ChangeNotifierProvider<AddressProvider>(
+          create: (_) => AddressProvider(),
+        ),
       ],
       child: GetMaterialApp(
         localizationsDelegates: const [
@@ -67,7 +71,7 @@ class _MyAppState extends State<MyApp> {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: S.delegate.supportedLocales,
-        locale: const Locale('ar'),
+        locale: const Locale('en'),
         debugShowCheckedModeBanner: false,
         title: 'Scent Laundry',
         theme: ThemeData(

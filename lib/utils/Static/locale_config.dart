@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../generated/l10n.dart';
 
 class LocaleConfig{
-  bool _isAr=false;
+  bool _isAr=true;
 
   bool get isAr => _isAr;
 

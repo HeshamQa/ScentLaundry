@@ -70,7 +70,15 @@ class _BottomContainerState extends State<BottomContainer> {
             ),
             CustomButton(
                 press: () {
-                  Get.toNamed(Approute.PlaceOrder);
+                  if(Provider.of<CartProvider>(context,listen:false).listCart.isNotEmpty) {
+                    Get.toNamed(Approute.PlaceOrder);
+                  }
+                  else{
+                    showDialog(context: context, builder: (context) => AlertDialog(
+                      title: Text('The Cart Is Empty'),
+
+                    ),);
+                  }
                 },
                 title: "Place Order")
           ],
