@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:scentlaundry/screens/AdminScreen/home_screen.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
 import '../../utils/Static/consvalue.dart';
 import '../../utils/Static/sharedpref.dart';
@@ -32,7 +33,7 @@ login(BuildContext context,TextEditingController phone,TextEditingController pas
       if (jsonBody['idusertype'] == 1) {
         Get.offAllNamed(Approute.HomeScreen);
       } else if (jsonBody['idusertype'] == 2) {
-        Get.offAllNamed(Approute.HomeScreen);
+        Get.offAll(const HomeAdminScreen());
       } else {
         showDialog(
           context: context,

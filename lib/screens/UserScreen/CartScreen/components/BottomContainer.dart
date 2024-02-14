@@ -74,10 +74,11 @@ class _BottomContainerState extends State<BottomContainer> {
                     Get.toNamed(Approute.PlaceOrder);
                   }
                   else{
-                    showDialog(context: context, builder: (context) => AlertDialog(
-                      title: Text('The Cart Is Empty'),
-
-                    ),);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text('The Cart Is Empty'),
+                      ),
+                    );
                   }
                 },
                 title: "Place Order")

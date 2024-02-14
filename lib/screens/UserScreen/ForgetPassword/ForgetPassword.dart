@@ -14,13 +14,12 @@ class ForgetPassword extends StatelessWidget {
       padding: const EdgeInsets.all(25.0),
       child: Column(
         children: [
-          // BackGround(height: getProportionateScreenHeight(300), title: "Forget\nPassword", h: 100),
-          Text(S.of(context).ForgetPassword, style: TextStyle(fontSize: 22)),
+          Text(S.of(context).ForgetPassword, style: const TextStyle(fontSize: 22)),
           SizedBox(height: getProportionateScreenHeight(60)),
           TextForm(
               textEditingController: phoneEditingController,
               obscure: false,
-              hint: S.of(context).EnterEmail, enabled: true,),
+              hint: S.of(context).Phone, enabled: true, type: TextInputType.number,),
           SizedBox(height: getProportionateScreenHeight(30)),
           CustomButton(press: () {}, title: S.of(context).Next),
         ],

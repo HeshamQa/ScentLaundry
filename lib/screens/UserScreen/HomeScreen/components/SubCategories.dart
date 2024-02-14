@@ -25,7 +25,8 @@ class _SubCategoriesState extends State<SubCategories> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      margin: const EdgeInsets.only(bottom: 50),
       height: getProportionateScreenWidth(200),
       child: Consumer<SubscribeProvider>(
         builder:

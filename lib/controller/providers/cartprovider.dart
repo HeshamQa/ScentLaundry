@@ -64,8 +64,6 @@ class CartProvider extends ChangeNotifier {
 
   updateItemCount(var id, var count, var index) async {
     EasyLoading.show(status: 'loading...');
-    //General.getPrefString(ConsValues.ID, "").then(
-    //(idUser) async {
     if (count <= 0) {
       deleteItemFromCart(id);
       listCart.removeAt(index);
@@ -84,8 +82,6 @@ class CartProvider extends ChangeNotifier {
     for (CartModel i in listCart) {
       totalPrice = totalPrice + double.parse(i.price) * i.count;
     }
-
-    // },);
 
     EasyLoading.dismiss();
     notifyListeners();

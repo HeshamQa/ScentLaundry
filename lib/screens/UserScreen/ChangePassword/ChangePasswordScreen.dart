@@ -31,27 +31,21 @@ class ChangePasswordScreen extends StatelessWidget {
                       textEditingController: TextEditingController(),
                       obscure: true,
                       hint: "Current Password",
-                      enabled: true,
+                      enabled: true, type: TextInputType.text,
                     ),
                     SizedBox(height: getProportionateScreenHeight(15)),
-                    SizedBox(
-                      width: getProportionateScreenWidth(250),
-                      child: TextForm(
-                        textEditingController: TextEditingController(),
-                        obscure: true,
-                        hint: "New Password",
-                        enabled: true,
-                      ),
+                    TextForm(
+                      textEditingController: TextEditingController(),
+                      obscure: true,
+                      hint: "New Password",
+                      enabled: true, type: TextInputType.text,
                     ),
                     SizedBox(height: getProportionateScreenHeight(15)),
-                    SizedBox(
-                      width: getProportionateScreenWidth(250),
-                      child: TextForm(
-                        textEditingController: TextEditingController(),
-                        obscure: true,
-                        hint: "Confirm Password",
-                        enabled: true,
-                      ),
+                    TextForm(
+                      textEditingController: TextEditingController(),
+                      obscure: true,
+                      hint: "Confirm Password",
+                      enabled: true, type: TextInputType.text,
                     ),
                     const Spacer(),
                     Row(

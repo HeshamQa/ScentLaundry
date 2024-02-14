@@ -39,26 +39,26 @@ class SignUpScreen extends StatelessWidget {
                       textEditingController: nameEditingController,
                       obscure: false,
                       hint: S.of(context).UserName,
-                      enabled: true,
+                      enabled: true, type: TextInputType.text,
                     ),
                     TextForm(
                       textEditingController: phoneTextEditingController,
                       obscure: false,
                       hint: S.of(context).Phone,
-                      enabled: true,
+                      enabled: true, type: TextInputType.number,
                     ),
                     TextForm(
                       textEditingController: passwordTextEditingController,
                       obscure: true,
                       hint: S.of(context).Password,
-                      enabled: true,
+                      enabled: true, type: TextInputType.text,
                     ),
                     TextForm(
                       textEditingController:
                           confirmPasswordTextEditingController,
                       obscure: true,
                       hint: S.of(context).ResetPassword,
-                      enabled: true,
+                      enabled: true, type: TextInputType.text,
                     ),
                     CustomButton(
                       title: S.of(context).SignUp,

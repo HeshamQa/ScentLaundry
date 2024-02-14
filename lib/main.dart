@@ -3,6 +3,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import 'package:scentlaundry/controller/admin_providers/admin_sub_provider.dart';
 import 'package:scentlaundry/controller/providers/categories.dart';
 import 'package:scentlaundry/controller/providers/dragged_adress_provider.dart';
 import 'package:scentlaundry/controller/providers/item_provider.dart';
@@ -16,6 +17,7 @@ import 'package:scentlaundry/screens/UserScreen/SplashScreen/splashscreen.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
 import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
+import 'controller/admin_providers/admin_order_provider.dart';
 import 'controller/providers/subscribe_provider.dart';
 
 Future<void> main() async {
@@ -37,6 +39,9 @@ class _MyAppState extends State<MyApp> {
       providers: [
         ChangeNotifierProvider<CategoriesProvider>(
           create: (_) => CategoriesProvider(),
+        ),
+        ChangeNotifierProvider<AdminSubProvider>(
+          create: (_) => AdminSubProvider(),
         ),
         ChangeNotifierProvider<ImageBannerProvider>(
           create: (_) => ImageBannerProvider(),
@@ -61,6 +66,9 @@ class _MyAppState extends State<MyApp> {
         ),
         ChangeNotifierProvider<AddressProvider>(
           create: (_) => AddressProvider(),
+        ),
+        ChangeNotifierProvider<AdminOrderProvider>(
+          create: (_) => AdminOrderProvider(),
         ),
       ],
       child: GetMaterialApp(

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
+import '../../../controller/providers/subscribe_provider.dart';
 import 'components/BottomBill.dart';
 import 'components/CardPaymentContainer.dart';
 import 'components/CashPaymentContainer.dart';
@@ -24,6 +26,11 @@ class PaymentScreen extends StatefulWidget {
 String gVal = 'cash';
 
 class _PaymentScreenState extends State<PaymentScreen> {
+  @override
+  void initState() {
+    Provider.of<SubscribeProvider>(context,listen: false).getSubscription();
+    super.initState();
+  }
   void onRadioValueChanged(String value) {
     setState(() {
       gVal = value;

@@ -5,7 +5,8 @@ class TextForm extends StatelessWidget {
   final String hint;
   final bool obscure;
   final bool enabled;
-  const TextForm({super.key, required this.textEditingController, required this.obscure, required this.hint, required this.enabled});
+  final TextInputType type;
+  const TextForm({super.key, required this.textEditingController, required this.obscure, required this.hint, required this.enabled, required this.type});
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +17,7 @@ class TextForm extends StatelessWidget {
       obscureText: obscure,
       style: TextStyle(color: enabled?Colors.black:Colors.grey,fontSize: 15),
       maxLines: 1,
+      keyboardType: type,
       decoration: InputDecoration(
         errorMaxLines: 1,
         hintText: hint,

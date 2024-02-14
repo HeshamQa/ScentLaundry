@@ -39,8 +39,12 @@ class _OrdersState extends State<Orders> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  value.orderList[index].idorderstate=="1"?
-                  const Text('Status : Delivered'):const Text("Status : Working..."),
+                  Row(
+                    children: [
+                      Text("Status : "),
+                      Text(value.orderList[index].status,style: const TextStyle(color: Colors.green),),
+                    ],
+                  ),
                   Text('Date : ${value.orderList[index].orderdate}'),
                 ],
               )

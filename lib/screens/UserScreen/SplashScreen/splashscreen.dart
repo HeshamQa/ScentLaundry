@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:scentlaundry/screens/AdminScreen/home_screen.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
 import 'package:scentlaundry/utils/Static/Size_Config.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
@@ -60,7 +61,7 @@ class _SplashScreenState extends State<SplashScreen>
                 print(value);
                 Timer(
                   const Duration(seconds: 2),
-                      () => Get.offAllNamed(Approute.HomeScreen),
+                      () => Get.offAll(const HomeAdminScreen()),
                 );
               }
             },

@@ -8,8 +8,8 @@ import '../../../../utils/Static/Size_Config.dart';
 import '../../../../utils/Widget/Custom_Button.dart';
 
 class CustomItems extends StatefulWidget {
-  var id;
-  CustomItems({
+  final String id;
+  const CustomItems({
     super.key,
     required this.id
   });
@@ -75,16 +75,19 @@ Map<int,int> counter= {};
                               }
                             });
                           },
-                          child: const Text(
-                            "-",
-                            style: TextStyle(fontSize: 25),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              "-",
+                              style: TextStyle(fontSize: 37),
+                            ),
                           )),
                       const Spacer(
                         flex: 1,
                       ),
                       Text(
                         counter[int.parse(value.listItem[index].id)].toString(),
-                        style: const TextStyle(fontSize: 20),
+                        style: const TextStyle(fontSize: 23),
                       ),
                       const Spacer(
                         flex: 1,
@@ -95,9 +98,12 @@ Map<int,int> counter= {};
                               counter[int.parse(value.listItem[index].id)] = counter[int.parse(value.listItem[index].id)]! + 1;
                             });
                           },
-                          child: const Text(
-                            "+",
-                            style: TextStyle(fontSize: 25),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              "+",
+                              style: TextStyle(fontSize: 35),
+                            ),
                           )),
                       const Spacer(
                         flex: 1,

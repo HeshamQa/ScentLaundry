@@ -116,7 +116,7 @@ class _LocationScreenState extends State<LocationScreen> {
     List<Placemark> placeMarks = await placemarkFromCoordinates(position.latitude, position.longitude);
     Placemark address = placeMarks[0];
     latLng = position;
-    String addressStr = "${address.street} ${position.latitude},${position.longitude}";
+    String addressStr = "${position.latitude},${position.longitude}";
     String addressPrinter="${address.street}, ${address.locality}, ${address.country},";
     setState(() {
       draggedAddress=addressStr;

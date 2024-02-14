@@ -1,8 +1,9 @@
 class OrderModel{
-  var id,location,pdate,rdate,orderdate,totalprice,iduser,idorderstate;
+  var id,location,pdate,rdate,orderdate,totalprice,iduser,idorderstate,status;
 
   OrderModel(
       {required this.id,
+        required this.status,
       required this.location,
       required this.pdate,
       required this.rdate,
@@ -20,7 +21,7 @@ class OrderModel{
       orderdate: json["orderdate"],
       totalprice: json["totalprice"],
       iduser: json["iduser"],
-      idorderstate: json["idorderstate"],
+      idorderstate: json["idorderstate"], status: json['status'],
     );
   }
 //

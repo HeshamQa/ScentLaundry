@@ -49,13 +49,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       textEditingController: phoneEditingController,
                       obscure: false,
                       hint: S.of(context).Phone,
-                      enabled: true,
+                      enabled: true, type: TextInputType.number,
                     ),
                     TextForm(
                       textEditingController: passwordEditingController,
                       obscure: true,
                       hint: S.of(context).Password,
-                      enabled: true,
+                      enabled: true, type: TextInputType.text,
                     ),
                     InkWell(
                       onTap: () {
