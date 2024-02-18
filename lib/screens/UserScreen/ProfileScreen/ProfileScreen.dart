@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+import 'package:scentlaundry/controller/providers/deleteuser.dart';
 import 'package:scentlaundry/screens/UserScreen/ProfileScreen/components/profileimage_imagepicker.dart';
 import 'package:scentlaundry/utils/Static/Route.dart';
 import 'package:scentlaundry/utils/Static/StaticColors.dart';
 import 'package:scentlaundry/utils/Widget/Custom_Container.dart';
 import '../../../utils/Static/Size_Config.dart';
+import '../../../utils/Static/consvalue.dart';
+import '../../../utils/Static/sharedpref.dart';
 import 'components/Buttons.dart';
 import 'components/FieldsItems.dart';
 
@@ -26,7 +30,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
       body: Column(
         children: [
           const ProfileImagePicker(),
-          SizedBox(height: getProportionateScreenHeight(25),),
+          SizedBox(
+            height: getProportionateScreenHeight(25),
+          ),
           Expanded(
             child: CustomContainer(
               child: Padding(
@@ -43,16 +49,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         children: [
                           const Text("if you want to delete your account "),
                           InkWell(
-                              onTap: (){
-                                showDialog(context: context, builder: (context) => AlertDialog(
-                                 title: const Text("Delete Your Account?"),
-                                  actions: [
-                                    IconButton(onPressed: (){Get.toNamed(Approute.Login);}, icon: const Text('Approve')),
-                                    IconButton(onPressed: (){Get.back();}, icon: const Text('Cancel')),
-                                  ],
-                                ),);
+                              onTap: () {
+                                showDialog(
+                                  context: context,
+                                  builder: (context) => AlertDialog(
+                                    title: const Text("Delete Your Account?"),
+                                    actions: [
+                                      IconButton(
+                                          onPressed: () {
+                                            General.getPrefInt(ConsValues.id, 0)
+                                                .then((iduser) async {
+                                              Provider.of<DeleteUser>(context,
+                                                  listen: false)
+                                                  .deleteUser(iduser);
+                                            });
+                                            Get.toNamed(Approute.Login);
+                                          },
+                                          icon: const Text('Approve')),
+                                      IconButton(
+                                          onPressed: () {
+                                            Get.back();
+                                          },
+                                          icon: const Text('Cancel')),
+                                    ],
+                                  ),
+                                );
                               },
-                              child: const Text("CLICK HERE",style: TextStyle(color: Colors.red),))
+                              child: const Text(
+                                "CLICK HERE",
+                                style: TextStyle(color: Colors.red),
+                              ))
                         ],
                       ),
                     ),
