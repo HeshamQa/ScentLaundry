@@ -12,7 +12,7 @@ class CartProvider extends ChangeNotifier {
   double totalPrice = 0;
 
   getCart() async {
-    EasyLoading.show(status: 'loading...');
+    .show(status: 'loading...');
     listCart = [];
     totalPrice = 0;
     General.getPrefInt(ConsValues.id, 0).then(
